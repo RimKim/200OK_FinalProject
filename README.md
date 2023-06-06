@@ -119,7 +119,7 @@ https://ovenapp.io/project/qd88VIWjsaejDrMlMGqosTVo0LvrruLM#4IE1u
 ▪️  관리자로 로그인 한 경우 마이페이지에서 관리자 홈으로 이동 가능합니다.( 일반 유저의 경우 버튼이 보이지 않습니다. )<br>
 ▪️  판매량 BEST5,WORST5 상품을 구글 chart api를 통해 출력합니다. <br>
 ▪️  회원,상품,주문에 대한 관리가 가능합니다.  <br><br>
-<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/3e0607f9-325b-4c1a-bf67-eb71839ac1c0"/>
+<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/3e0607f9-325b-4c1a-bf67-eb71839ac1c0"/> 
 
 ## 💥트러블 슈팅
 ###  ✔️ 쿼리 참조 타입 오류 발생
