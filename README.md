@@ -1,6 +1,6 @@
 # :ring:&nbsp;200OK Jewelry  Shop 
 
-
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FRimKim%2F200OK_FinalProject&count_bg=%23F573A3&title_bg=%23E9ADD2&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 <br>
 
