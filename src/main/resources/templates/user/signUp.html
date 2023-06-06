@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorate="~{layout/layout}">
+				
+<th:block layout:fragment="content">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=3.0">
+
+<link th:href="@{/assets/css/main.css}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<title>signUp</title>
+<style type="text/css">
+
+main {
+	margin-top: 5rem;
+}
+
+h2 {
+	padding-bottom: 10px;
+	font-size: 30px;
+	color: dark gray;
+	font-weight: bold;
+}
+
+.form-wrapper {
+	text-align: center;
+	margin: 100px auto;
+}
+
+#joinForm {
+	width: 700px;
+	margin: 50px auto;
+}
+
+.input-wrapper {
+	margin-top: 20px;
+	margin-left: 180px;
+	padding-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#joinForm input {
+	height: 35px;
+}
+
+
+label {
+  display: block;
+}
+
+
+</style>
+</head>
+
+
+<body>
+	
+
+	<div class="entire-wrap">
+
+		<main>
+			<div class="form-wrapper">
+				<form id="joinForm" action="join" method="post">
+					<h2>Account</h2>
+
+					<br>
+					<br>
+				
+					<div class="input-essential" align="right" style="right: auto;color: dark gray; ;font-size:0.5rem;">
+							<label for="essential">*필수입력사항</label>
+						</div>
+					<div class="input-area">
+						<div class="input-wrapper">
+							<label for="userId">*ID</label>
+						</div>
+						<div>
+							<input type="text" id="userId" name="userId" size="40"
+								placeholder="영문소문자, 숫자 조합으로 4~16자리" required>
+							<button type="button" id="btnIdCheck"
+								style="width: 70px; height: 40px;" onclick="checkUserId()">중복체크</button><br>
+							<span id="olmessage"></span>
+						
+						</div>
+						<p id="idValidation" align="left" style="color: red; font-size: 0.3rem; ">
+						  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						아이디는 영문소문자, 숫자 조합의 4~16자리로 설정해주세요.</p>
+						<div class="input-wrapper">
+							<label for="userPwd">*Password</label>
+						</div>
+						<div>
+							<input type="password" id="userPwd" name="userPwd" size="55"
+								placeholder="영문대소문자, 숫자, 특수문자 2가지 이상 조합으로 8~16자리" required>
+						</div>
+						<p id="pwValidation" style="color: red; font-size: 0.3rem;" align="center">
+						  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						 비밀번호는 영문대소문자, 숫자, 특수문자 2가지 이상 조합의 8~16자리로 설정해주세요.</p>
+						<div class="input-wrapper">
+							<label for="userPwCheck">*비밀번호 확인</label>
+						</div>
+						<div>
+						 <input type="password" id="userPwCheck" name="userPwCheck"
+								size="55" placeholder="영문대소문자, 숫자, 특수문자 2가지 이상 조합으로 8~16자리"
+								required>
+						</div>
+						
+						<p id="pwCheckResult" style=" color: red; font-size: 0.8rem;"align="center"></p>
+						<div class="input-wrapper">
+							<label for="userName">*Name</label>
+						</div>
+						<div>
+						<input type="text" id="userName" name="userName" size="55"
+								placeholder="이름" required>
+						</div>
+						<div class="input-wrapper">
+						<label for="userAddress">*Address</label>
+						</div>
+						<div class="form-group">
+							     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+							     <input class="form-control" style="width: 40%; display: inline;"
+								placeholder="우편번호" name="userAddr1" id="userAddr1" type="text"
+								readonly="readonly">
+							<button type="button" class="btn btn-default"
+								onclick="execPostCode();">
+								<i class="fa fa-search"></i> 우편번호 찾기
+							</button>
+						</div>
+						<div class="form-group">
+							
+							<div>
+							<input class="form-control" type="text"  id="userAddr2" name="userAddr2" size="55"
+								style="display: inline;" readonly="readonly"  placeholder="도로명 주소" required >
+						</div>
+						</div>
+						
+						
+	
+						<div class="form-group">
+							<input class="form-control" placeholder="상세주소" name="userAddr3"size="55"
+								id="userAddr3" type="text" />
+						</div>
+
+						<div class="input-wrapper">
+							<label for="userMobile">*Mobile</label>
+						</div>
+						<div>
+							<input type="text" id="userMobile" name="userMobile" size="55"
+								placeholder="모바일" required>
+						</div>
+						<div class="input-wrapper">
+							<label for="userPhone">Phone</label>
+						</div>
+						<div>
+							<input type="text" id="userPhone" name="userPhone" size="55"
+								placeholder="전화">
+						</div>
+						
+						 
+						<div class="input-wrapper">
+							<label for="userEmail">*Email</label>
+						</div>
+						<div>
+							<input type="text" id="userEmail" name="userEmail" size="45" placeholder="이메일" required>
+						<button onClick="checkEmail(document.getElementById('userEmail').value)" class="btn btn-outline-primary" type="button">인증번호</button>  
+
+						</div>
+						
+						
+	
+	
+	<div class="form-group last mb-4 check_input" style=" margin-top: 10px;
+	margin-left: 175px;
+	padding-bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 13px;">
+	<label for="userEmailconfirm" id="userEmailconfirmTxt" >인증번호를 입력해주세요</label>
+	<input type="text" class="form-control" 
+								id="userEmailconfirm"  size="55" placeholder="인증번호" >
+							
+	</div>
+	
+	
+						<br>
+						<br>
+						<br>
+						
+						<div class="input-agree" align="right" style="right: auto;color: black; ;font-size:auto;">
+							<span>이용약관</span>                            <span>개인정보처리방침</span>
+						</div>
+						
+				<div class="input-check" align="left"style="left: auto;">
+				<label for="agree_all">
+ 					 <input type="checkbox" name="agree_all" id="agree_all" value='agreeAll' onclick='agreeAll(this)'>
+  				<span>전체 동의합니다</span>
+						</label> 
+
+ 			<label for="agree">
+  				<input type="checkbox"  name="agree" value="1" id="agree1">
+  							<span>이용약관 동의<strong>(필수)</strong></span>
+			</label>
+
+			<label for="agree">
+  					<input type="checkbox"  name="agree" value="2" id="agree2">
+  					<span>개인정보 수집, 이용 동의<strong>(필수)</strong></span>
+			</label>
+
+		<label for="agree">
+  					<input type="checkbox" name="agree" value="3" id="agree3">
+  					<span>개인정보 이용 동의<strong>(필수)</strong></span>
+		</label> 
+      
+        
+        <label for="userSnswhether">
+  				<input type="checkbox" name="userSnswhether" value="Y" id="userSnswhether">
+  				<span>SNS 수신동의</span>
+		</label>
+		<label for=" userEmailwhether">
+  		<input type="checkbox" name="userEmailwhether" value="Y" id="userEmailwhether">
+  				<span>Email 수신동의</span>
+		</label>
+    			</div>
+						<div style="display: block;  margin: 60px auto; color: dark gray; font-size: 20px; font-weight: bold;">
+							<button type="submit" id="submitForm" onclick="submitForm()" >Create Account</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</main>
+			
+	</div>
+
+
+
+
+<script>
+
+//id양식검사
+const userIdInput = document.getElementById('userId');
+
+userIdInput.addEventListener('input', function() {
+  const userIdValue = userIdInput.value;
+  const pattern = /^[a-z0-9]{4,16}$/;
+  if (!pattern.test(userIdValue)) {
+    userIdInput.setCustomValidity('영문소문자, 숫자 조합으로 4~16자리를 입력해주세요.');
+  } else {
+    userIdInput.setCustomValidity('');
+  }
+});
+
+
+
+    
+//id 중복검사
+function checkUserId() {
+    var userId = document.getElementById("userId").value;
+
+    axios({
+        method: 'get',
+        url: 'checkuserId?userId=' + userId
+      })
+        .then(function (response) {
+            if (response.data === true) {
+            	document.getElementById("olmessage").innerHTML = "<span style='color:red'>중복된 아이디입니다.</span>";
+               
+            } else {
+            	 
+            	 document.getElementById("olmessage").innerHTML = "<span style='color:blue'>사용 가능한 아이디입니다.</span>";
+            
+            }
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+
+
+
+
+//비밀번호검사 선언
+const userPwd = document.getElementById('userPwd');
+const userPwCheck = document.getElementById('userPwCheck');
+const pwCheckResult = document.getElementById('pwCheckResult');
+
+
+
+// 비밀번호 일치 검사 
+function checkPasswordMatch() {
+  if (userPwd.value !== userPwCheck.value) {
+    pwCheckResult.textContent = '비밀번호가 일치하지 않습니다.';
+    userPwCheck.setCustomValidity('비밀번호가 일치하지 않습니다.');
+    pwCheckResult.style.color = 'red'; 
+  } else {
+    pwCheckResult.textContent = '비밀번호가 일치합니다.';
+    userPwCheck.setCustomValidity('');
+    pwCheckResult.style.color = 'blue'; 
+  }
+}
+
+userPwCheck.addEventListener('input', function () {
+  checkPasswordMatch();
+});
+
+
+
+
+
+
+
+
+	
+	
+	
+//도로명api
+function execPostCode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+
+           var fullRoadAddr = data.roadAddress;
+           var extraRoadAddr = ''; // 
+
+           if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+               extraRoadAddr += data.bname;
+           }
+           if(data.buildingName !== '' && data.apartment === 'Y'){
+              extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+           }
+           if(extraRoadAddr !== ''){
+               extraRoadAddr = ' (' + extraRoadAddr + ')';
+           }
+           if(fullRoadAddr !== ''){
+               fullRoadAddr += extraRoadAddr;
+           }
+
+           console.log(data.zonecode);
+           console.log(fullRoadAddr);
+           
+           
+           $("[name=userAddr1]").val(data.zonecode);
+           $("[name=userAddr2]").val(fullRoadAddr);
+           
+          
+       }
+    }).open();
+}
+
+
+//전체 동의
+function agreeAll(agreeAll)  {
+	  const checkboxes 
+	     = document.querySelectorAll('input[type="checkbox"]');
+	  
+	  checkboxes.forEach((checkbox) => {
+	    checkbox.checked = agreeAll.checked
+	  })
+	}
+	
+
+
+
+
+//인증메일
+function checkEmail(email) {
+  axios({
+    method: 'POST',
+    url: 'user/userEmailConfirm?userEmail=' + email
+  })
+  .then(function (response) {
+    alert("해당 이메일로 인증번호 발송이 완료되었습니다.");
+    document.getElementById('userEmailconfirmTxt').innerText = ''; // 인증번호 일치 여부 텍스트 초기화
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+function verifyCode() {
+  var confirmationCode = response.data.confirmationCode; 
+  var inputCode = document.getElementById('userEmailconfirm').value;
+  
+  if (confirmationCode === inputCode) {
+    document.getElementById('userEmailconfirmTxt').innerText = '인증번호가 일치합니다.';
+  } else {
+    document.getElementById('userEmailconfirmTxt').innerText = '인증번호가 일치하지 않습니다.';
+  }
+}
+
+//유효성 검사 및 폼 제출	
+function Yncheck(checkbox) {
+	  if (checkbox.checked == true) {
+	    checkbox.value = "Y";
+	  } else {
+	    checkbox.value = "N";
+	  }
+	}	
+	
+function validateForm() {
+	  const userId = document.getElementById('userId');
+	  const userPwd = document.getElementById('userPwd');
+	  const userPwCheck = document.getElementById('userPwCheck');
+	  const userName = document.getElementById('userName');
+	  const userAddr1 = document.getElementById('userAddr1');
+	  const userAddr2 = document.getElementById('userAddr2');
+	  const userMobile = document.getElementById('userMobile');
+	  const userEmail = document.getElementById('userEmail');
+	  const userEmailconfirm = document.getElementById('userEmailconfirm');
+	  const agree1 = document.getElementById('agree1');
+	  const agree2 = document.getElementById('agree2');
+	  const agree3 = document.getElementById('agree3');
+	  const btnIdCheck = document.getElementById("btnIdCheck");
+	  const btnPrimary = document.querySelector(".btn.btn-outline-primary");
+
+	  if (!userId.value || !userPwd.value || !userPwCheck.value || !userName.value || !userAddr1.value || !userMobile.value || !userEmail.value ) {
+	    alert('모든 필수입력사항을 확인해주세요.');
+	    return;
+	  }
+
+	  if (!agree1.checked || !agree2.checked || !agree3.checked) {
+	    alert('모든 필수 동의 항목을 확인해주세요.');
+	    return;
+	  }
+
+	  if (userPwd.value !== userPwCheck.value) {
+	    alert('비밀번호와 비밀번호 확인이 일치하지 않습니다.');
+	    return;
+	  }
+	  if (!btnIdCheck.clicked) {
+		    alert("아이디 중복체크를 해주세요.");
+
+		    btnIdCheck.addEventListener('click', function() {
+		      btnIdCheck.clicked = true;
+		    });
+		    return;
+	  }
+
+	  if (!btnPrimary.clicked) {
+	    alert("이메일 인증을 해주세요.");
+
+	    btnPrimary.addEventListener('click', function() {
+	    	btnPrimary.clicked = true;
+	    });
+	    return;
+	  }
+
+	  const userSnswhether = document.getElementById("userSnswhether");
+	  const userEmailwhether = document.getElementById("userEmailwhether");
+	  Yncheck(userSnswhether);
+	  Yncheck(userEmailwhether);
+
+	  const xhr = new XMLHttpRequest();
+	  xhr.open("POST", "/join");
+	  xhr.onload = function() {
+	    console.log(xhr.responseText);
+	  };
+
+	  const formData = new FormData();
+	  formData.append("userSnswhether", userSnswhether.value);
+	  formData.append("userEmailwhether", userEmailwhether.value);
+	  xhr.send(formData);
+
+	  document.getElementById('joinForm').submit(); // 폼 제출
+	}
+
+	function submitForm() {
+	  const submitBtn = document.getElementById('submitForm');
+	  submitBtn.addEventListener('click', function(event) {
+	    event.preventDefault(); // 폼 제출 이벤트 막기
+	    validateForm(); // validateForm() 함수 호출
+	  });
+	}
+
+	submitForm();
+	
+		  
+		  
+		  
+		  
+</script>
+
+
+
+
+
+</body>
+
+
+
+</html>

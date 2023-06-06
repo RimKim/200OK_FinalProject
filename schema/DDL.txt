@@ -1,0 +1,253 @@
+drop table ANSWER;
+drop table PRODUCTANSWER;
+drop table CART;
+drop table NOTICE;
+drop table REVIEW;
+drop table PRODUCTQUESTION;
+drop table orderitem;
+drop table orders;
+drop table likes;
+drop table QUESTION;
+drop table delivery;
+
+drop table USER;
+drop table PRODUCT;
+drop table category;
+
+
+create table USER(/* 회원 */
+  user_id VARCHAR(32) PRIMARY KEY,
+ user_name VARCHAR(20) NOT NULL,
+  user_pwd VARCHAR(32) NOT NULL,
+ user_mobile VARCHAR(40) NOT NULL,
+ user_phone VARCHAR(40) ,
+ user_addr1 VARCHAR(50) NOT NULL,
+user_addr2 VARCHAR(50) NOT NULL,
+user_addr3 VARCHAR(50) ,
+ user_emailWhether VARCHAR(10) DEFAULT 'N',
+ user_snsWhether VARCHAR(50) DEFAULT 'N',
+ user_email VARCHAR(50) NOT NULL,
+ user_regdate  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ user_role  VARCHAR(20) DEFAULT 'USER',
+user_provider VARCHAR(10) DEFAULT 'BASIC'
+);
+
+/*배송*/
+create table DELIVERY(/*배송 */
+delivery_Id  INTEGER AUTO_INCREMENT PRIMARY KEY,
+delivery_name VARCHAR(50) NOT NULL,
+delivery_mobile VARCHAR(50) NOT NULL,
+ delivery_add1  VARCHAR(50) NOT NULL,
+ delivery_add2  VARCHAR(50) NOT NULL,
+ delivery_add3  VARCHAR(50) ,
+ delivery_basicYn  VARCHAR(3) DEFAULT 'N',/*기본배송지 여부 */
+delivery_memo   VARCHAR(50),
+user_id VARCHAR(32)
+);
+
+
+/*주문*/
+create table  ORDERS(/* 주문*/
+ order_code INTEGER AUTO_INCREMENT  PRIMARY KEY,
+ user_id VARCHAR(32)  NOT NULL,
+ order_regdate TIMESTAMP  NOT NULL,
+ order_totalPrice INTEGER NOT NULL,
+ order_payment VARCHAR(20) NOT NULL,
+ order_status VARCHAR(20) NOT NULL,
+ delivery_name VARCHAR(50) NOT NULL,
+delivery_mobile VARCHAR(50) NOT NULL,
+ delivery_add1  VARCHAR(50) NOT NULL,
+ delivery_add2  VARCHAR(50) NOT NULL,
+ delivery_add3  VARCHAR(50) ,
+delivery_memo   VARCHAR(50)
+
+);
+
+create table  ORDERITEM(/* 주문아이템*/
+ orderItem_code INTEGER AUTO_INCREMENT  PRIMARY KEY,
+orderItem_quantity INTEGER NOT NULL,
+product_code INTEGER NOT NULL,
+ order_code  INTEGER NOT NULL
+
+);
+
+
+
+
+
+/*리뷰*/
+create table REVIEW(/* 리뷰 */
+ review_no       INTEGER AUTO_INCREMENT  PRIMARY KEY,
+ product_code     INTEGER  NOT NULL,
+ user_id      VARCHAR(32)  NOT NULL,
+ order_Code   INTEGER NOT NULL,
+ review_content    VARCHAR(200) NOT NULL,
+ review_starScope  VARCHAR(20) NOT NULL,
+ review_regdate    TIMESTAMP NOT NULL,
+ review_image1      VARCHAR(20),
+ review_image2      VARCHAR(20),
+ review_image3      VARCHAR(20)
+);
+
+
+
+
+
+
+
+
+
+
+create table PRODUCT(/*상품*/
+product_code INTEGER AUTO_INCREMENT PRIMARY KEY,
+product_name VARCHAR(30) NOT NULL,
+product_price INTEGER,
+product_thumbNail VARCHAR(20) NOT NULL,
+product_image1 VARCHAR(20) NOT NULL,
+product_image2 VARCHAR(20) NOT NULL,
+product_posting_yn VARCHAR(5) NOT NULL,
+product_saleing_yn VARCHAR(5) NOT NULL,
+product_size VARCHAR(5) NOT NULL,
+product_stock INTEGER NOT NULL,
+product_sale INTEGER NOT NULL,
+product_detail TEXT NOT NULL,
+category_no INTEGER NOT NULL
+);
+
+
+
+/*질문게시판 답변*/
+
+create table ANSWER(/*질문게시판 답변*/
+answer_no INTEGER AUTO_INCREMENT PRIMARY KEY,
+answer_content VARCHAR(500) NOT NULL,
+answer_regdate TIMESTAMP NOT NULL,
+question_no INTEGER NOT NULL
+);
+
+
+/*상품질문*/
+
+create table PRODUCTQUESTION(/*상품 질문*/
+productquestion_no INTEGER AUTO_INCREMENT PRIMARY KEY,
+productquestion_title VARCHAR(50) NOT NULL,
+productquestion_content VARCHAR(500) NOT NULL,
+productquestion_regdate TIMESTAMP NOT NULL,
+productquestion_publication INTEGER NOT NULL,
+user_id VARCHAR(32) NOT NULL,
+product_code INTEGER NOT NULL
+);
+
+/*상품질문 답변*/
+
+create table PRODUCTANSWER(/*상품질문 답변*/
+productanswer_no INTEGER AUTO_INCREMENT PRIMARY KEY,
+productanswer_content VARCHAR(500) NOT NULL,
+productanswer_regdate TIMESTAMP NOT NULL,
+user_id VARCHAR(32) NOT NULL,
+productquestion_no INTEGER NOT NULL
+);
+
+/*질문 게시판*/
+
+create table QUESTION(/*질문 게시판*/
+question_no INTEGER AUTO_INCREMENT PRIMARY KEY,
+question_title VARCHAR(50) NOT NULL,
+question_content VARCHAR(500) NOT NULL,
+question_regdate TIMESTAMP NOT NULL,
+question_category VARCHAR(20) NOT NULL,
+user_id VARCHAR(32) NOT NULL
+);
+
+/*장바구니*/
+
+create table CART(/*장바구니*/
+cart_no INTEGER AUTO_INCREMENT PRIMARY KEY,
+cart_quantity INTEGER NOT NULL,/*수량*/
+product_code INTEGER NOT NULL,
+user_id   VARCHAR(32) NOT NULL
+);
+
+
+/*공지게시판*/
+
+create table NOTICE(/*공지게시판*/
+user_id varchar(32) not null,
+notice_no INTEGER AUTO_INCREMENT PRIMARY KEY,
+notice_title VARCHAR(50) NOT NULL,
+notice_content VARCHAR(500) NOT NULL,
+notice_regdate TIMESTAMP NOT NULL,
+notice_category INTEGER NOT NULL,/*중요도 순으로 (0,1만)*/
+notice_image VARCHAR(20) 
+);
+
+/*찜하기*/
+
+create table LIKES(/*찜하기*/
+like_no INTEGER AUTO_INCREMENT PRIMARY KEY,
+product_code INTEGER NOT NULL,
+user_id  VARCHAR(32) NOT NULL
+);
+
+
+
+/*상품 카테고리*/
+
+create table CATEGORY (
+category_no INTEGER AUTO_INCREMENT PRIMARY KEY,
+category_main VARCHAR(20) NOT NULL,
+category_sub VARCHAR(20) NOT NULL
+);
+
+
+
+
+
+
+
+
+
+
+ALTER TABLE ORDERITEM ADD FOREIGN KEY(product_code) REFERENCES PRODUCT(product_code);
+ALTER TABLE ORDERITEM ADD FOREIGN KEY(order_code) REFERENCES ORDERS(order_code);
+
+
+
+ALTER TABLE PRODUCT ADD FOREIGN KEY(category_no) REFERENCES CATEGORY(category_no);
+
+ALTER TABLE NOTICE ADD FOREIGN KEY (user_id) REFERENCES USER(user_id);
+
+/*ALTER TABLE ANSWER ADD FOREIGN KEY(user_id) REFERENCES USER(user_id);*/
+
+ALTER TABLE ANSWER ADD FOREIGN KEY(question_no) REFERENCES QUESTION(question_no);
+
+
+
+
+
+ALTER TABLE QUESTION ADD FOREIGN KEY (user_id) REFERENCES USER (user_id);
+
+ALTER TABLE CART ADD FOREIGN KEY (user_id) REFERENCES USER (user_id);
+
+ALTER TABLE CART ADD FOREIGN KEY (product_code) REFERENCES PRODUCT(product_code);
+
+
+
+ALTER TABLE LIKES ADD FOREIGN KEY (product_code) REFERENCES PRODUCT(product_code);
+
+ALTER TABLE ORDERS ADD FOREIGN KEY(user_id) REFERENCES USER(user_id);
+
+
+ALTER TABLE PRODUCTANSWER ADD FOREIGN KEY (user_id) REFERENCES USER(user_id);
+ALTER TABLE PRODUCTANSWER ADD FOREIGN KEY (productquestion_no) REFERENCES PRODUCTQUESTION(productquestion_no);
+
+
+
+ALTER TABLE REVIEW ADD FOREIGN KEY(product_code) REFERENCES PRODUCT(product_code);
+ALTER TABLE REVIEW ADD FOREIGN KEY(order_code) REFERENCES ORDERS(order_code);
+ALTER TABLE REVIEW ADD FOREIGN KEY(user_id) REFERENCES USER(user_id);
+
+ALTER TABLE productquestion  ADD FOREIGN KEY (product_code) REFERENCES PRODUCT(product_code);
+ALTER TABLE productquestion  ADD FOREIGN KEY (user_id) REFERENCES USER (user_id);
+
+ALTER TABLE DELIVERY ADD FOREIGN KEY (user_id) REFERENCES USER(user_id);

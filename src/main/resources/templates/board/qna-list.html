@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+   layout:decorate="~{layout/layout}">
+
+<th:block layout:fragment="content">
+<head>
+<link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="../assets/css/qna.css" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>자주 묻는 질문</title>
+</head>
+<body>
+
+<article class="faqfull">
+<section class="faq">
+  <h2>FAQ</h2>
+<div class="faqnavfull">
+<div class="faqcat">
+
+<div class="faqtxt01">
+  <span class="faqcatxt">Tel. 1600-0000</span><br>
+평일 9:30~17:30<br>(점심 12:30~13:30)</div>
+</div>
+
+<div class="faqcat2">
+  
+  <div class="faqtxt01">
+  <span class="faqcatxt">Q&A</span><br>
+질문 전 자주 묻는 질문을 <br>먼저 확인해 주세요.</div>
+</div>
+
+<div class="faqcat">
+
+<div class="faqtxt01">
+  <span class="faqcatxt">NOTICE</span><br>
+질문 전 공지사항을 항상<br>먼저 확인해 주세요.</div>
+</div>
+</div>
+
+<section class="qnawrite">
+
+
+</section>
+
+<br>
+
+<a href="#" class="faqnav"><b>자주찾는 FAQ</b></a>
+<a th:href="@{/question/questionlist}" class="faqnav"> <b>문의사항</b></a>
+
+
+  <p class="sub">&nbsp; &nbsp; 구분 <span class="title">제목</span> </p>
+  <!-- Accordion Menu [Start] -->
+  <article class="content">
+    <div>
+      <dl>
+        <dt><span>상품</span>오프라인 매장에서 본 상품을 200OK 에서 검색할 수 있나요? <img class="plusbnt" src="https://i.ibb.co/QDSm4T4/1.png"></dt>
+        <dd>오프라인 매장의 모든 상품이 200OK 에 구비되어 있지는 않습니다.<br>
+좀 더 상세한 검색을 위해서는 검색창에서 키워드 및 모델명을 입력하여 검색하실 수 있습니다.</dd>
+
+  <dl>
+    <dt><span>배송</span>상품이 파손되었거나 수량이 다르면 어떻게 하나요?<img class="plusbnt" src="https://i.ibb.co/QDSm4T4/1.png"></dt>
+    <dd>배송 완료 후 상품확인 시 상품이 파손되었거나 배송된 상품의 수량이 다를 경우 고객센터(☎1600-0000)로 문의하시기 바랍니다.</dd>
+
+<dl>
+  <dt><span>상품</span>상품의 판매상태는 어디에서 확인할 수 있나요? <img class="plusbnt" src="https://i.ibb.co/QDSm4T4/1.png"></dt>
+  <dd>각각의 상품 페이지에서 구매가능한 상품인지, 품절인지 확인가능합니다.</dd>
+
+<dl>
+  <dt><span>상품</span>매장픽업 주문에 대해 알고 싶어요. <img class="plusbnt" src="https://i.ibb.co/QDSm4T4/1.png"></dt>
+  <dd>
+    매장픽업은 200OK 에서 주문, 결제 후에 최단 2시간 이후에 고객님께서 200OK 매장(디지털프라자, 모바일스토어)에서 주문하신 상품을 수령 할 수 있는 서비스입니다.<br><br>
+
+    매장픽업은<br>
+    - 상품을 온라인에서 주문하시고, 매장에서 당일 수령 할 수 있습니다.<br>
+    - 오프라인 매장에서 제공되는 서비스이므로, 가까운 상품 픽업 매장을 쉽게 선택하실 수 있습니다.<br>
+    - 주문상품을 주문고객이 직접 수령하실 수도, 수령인을 따로 지정하실 수도 있습니다.</dd>
+
+<dl>
+  <dt><span>A/S</span>&nbsp;A/S 서비스 처리 기준은 어떻게 되나요? <img class="plusbnt" src="https://i.ibb.co/QDSm4T4/1.png"></dt>
+  <dd>1. 무상 A/S<br>
+1) 구매완료 후 1년 이내의 상품하자로 인한 서비스<br><br>
+
+2. 유상 A/S<br>
+
+1) 보증기간이 경과된 상품<br>
+2) 고객의 취급 부주의 및 고의적 결함 상품<br>
+3) 고객이 사용 중 천재지변(수해, 화재, 지진)으로 인한 결함 상품<br>
+4) 출고상품의 변형 또는 지정 서비스점 이외의 사람이 수리한 상품<br>
+5) 제조회사의 책임이 없는 상품<br>
+6) 기타 고객이 과실을 인정한 경우
+</dd>
+
+<dl>
+  <dt><span>반품</span>상품을 받았는데 불량입니다. 교환해주세요. <img class="plusbnt" src="https://i.ibb.co/QDSm4T4/1.png"></dt>
+  <dd>배송 받으신 제품이 불량인 경우,<br>
+재정경제부 '소비자피해보상규정'에 따라 제품을 수리 또는 교환해 드리고 있습니다.<br>
+
+시공할 때 불량부분을 발견하셨다면 시공팀에 말씀해 주시고, <br>
+
+사용하시다가 발견하셨다면 고객센터에 온라인 신청 혹은 유선 신청해주세요.  <br>
+
+
+단, 사용중에 발생된 하자에 대해서는 상황에 따라서 유상으로 처리될수도 있습니다.</dd>
+
+<dl>
+  <dt><span>배송</span>배송비가 무료인가요?<img class="plusbnt" src="https://i.ibb.co/QDSm4T4/1.png"></dt>
+  <dd>그렇지 않습니다.<br>
+
+현재 상품에 표시된 모든 가격과 일체의 배송비는 별개의 것입니다.<br>
+(제주도, 울릉도 등 산간지역은 배송비가 추가발생할수 있습니다.)<br>
+</dd>
+
+<dl>
+  <dt><span>A/S</span>&nbsp;A/S 접수를 했는데 언제쯤 조치가 되나요?<img class="plusbnt" src="https://i.ibb.co/QDSm4T4/1.png"></dt>
+  <dd>A/S 접수(1600-0000) 및 사이트 A/S 접수 후 하자를 파악하여 7~14일 이내에 <br>
+
+수리한 후 배송해 드리고 있습니다.  <br>
+
+부품수급기간이 오래 걸리는것은 지연될 수 있사오니 양해해 주십시오. <br>
+유상의 경우에는 먼저 조치금액을 안내 해 드리고 있습니다. <br>
+
+또한 성수기인 1월-3월 사이에는 업무 과부하로 시일이 조금 더 소요될수 있으니 이점 양해바랍니다.</dd>
+
+
+    </div>
+
+
+  <!-- Accordion Menu [End] -->
+  </div>
+  
+   
+
+  </section>
+
+</article>
+  <script>
+  var acodian = {
+
+    click: function(target) {
+      var _self = this,
+        $target = $(target);
+      $target.on('click', function() {
+        var $this = $(this);
+        if ($this.next('dd').css('display') == 'none') {
+          $('dd').slideUp();
+          _self.onremove($target);
+
+          $this.addClass('on');
+          $this.next().slideDown();
+        } else {
+          $('dd').slideUp();
+          _self.onremove($target);
+
+        }
+      });
+    },
+    onremove: function($target) {
+      $target.removeClass('on');
+    }
+
+  };
+  acodian.click('dt');
+  </script>
+
+<script>
+
+
+/********************** Mobile Menu ***********************/
+'use strict';
+
+(function() {
+  var body = document.body;
+  var burgerMenu = document.getElementsByClassName('b-menu')[0];
+  var burgerContain = document.getElementsByClassName('b-container')[0];
+  var burgerNav = document.getElementsByClassName('b-nav')[0];
+
+  burgerMenu.addEventListener('click', function toggleClasses() {
+    [body, burgerContain, burgerNav].forEach(function (el) {
+      el.classList.toggle('open');
+    });
+  }, false);
+})();
+
+
+/********************** Mobile Menu ***********************/
+
+</script>
+
+
+</body>
+
+</html>

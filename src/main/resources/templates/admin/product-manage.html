@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link th:href="@{/assets/css/admin-home.css}" rel="stylesheet"
+	type="text/css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style type="text/css"></style>
+</head>
+<body>
+	<div class="area"></div>
+	<nav class="main-menu">
+
+		<ul>
+			<li><br> <a href="https://jbfarrow.com"> <i
+					class="fa fa-home fa-2x"></i> <span class="nav-text"> 홈으로 이동
+				</span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/usermanageform}">
+					<i class="fa fa-comments fa-2x"></i> <span class="nav-text">
+						회원 관리 </span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/productmanageform}">
+					<i class="fa fa-camera-retro fa-2x"></i> <span class="nav-text">
+						상품 관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/ordermanageform}"> <i
+					class="fa fa-book fa-2x"></i> <span class="nav-text"> 주문관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/moveMain}"> <i
+					class="fa fa-map-marker fa-2x"></i> <span class="nav-text">
+						쇼핑몰 메인으로 이동 </span>
+			</a></li>
+
+
+			<ul class="logout">
+				<li><a th:href="@{/admin/logout}"> <i
+						class="fa fa-power-off fa-2x"></i> <span class="nav-text">
+							Logout </span>
+				</a></li>
+			</ul>
+		</ul>
+	</nav>
+
+
+
+	<!-- Contents -->
+	<br>
+	<br>
+
+	<div align="center">
+		<h1 style="font-size: 3em;">상품관리</h1>
+		<br> <br>
+	</div>
+
+	<table class="table all_center type_check"
+		style="margin-left: 70px; margin-right: 100px;">
+		<colgroup>
+			<col style="width: 80px;" />
+		</colgroup>
+		<thead>
+			<tr>
+
+				<th class="align_left">상품코드</th>
+				<th>썸네일</th>
+				<th>이름</th>
+				<th>가격</th>
+				<th>포스팅여부</th>
+				<th>판매여부</th>
+				<th>사이즈</th>
+				<th>재고</th>
+				<th>판매량</th>
+				<th>수정/삭제</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="product : ${product}">
+
+				<td th:text="${product.productCode}"></td>
+				<td><img th:src="@{/image/__${product.productThumbnail}__.jpg}"
+					width="80px" height="50px"></td>
+				<td th:text="${product.productName}"></td>
+				<td th:text="${product.productPrice}"></td>
+				<td th:text="${product.productPostingYn}"></td>
+				<td th:text="${product.productSaleingYn}"></td>
+				<td th:text="${product.productSize}"></td>
+				<td th:text="${product.productStock}"></td>
+				<td th:text="${product.productSale}"></td>
+				<td><a
+					th:href="@{/admin/productupdateform(productCode=${product.productCode})}"
+					class="btn btn-info btn-sm">수정</a> / 
+					<a href="#" class="btn btn-danger btn-sm" 
+					th:data-productCode="${product.productCode}"
+					th:attr="data-confirm='Are you sure you want to delete product ' + ${product.productCode} + ' ?'"
+					th:onclick="'confirmDelete(this.getAttribute(\'data-productCode\'))'">
+					삭제 </a>
+					</td>
+			</tr>
+		</tbody>
+	</table>
+	
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+	function confirmDelete(productCode) {
+
+	    if (confirm("정말 삭제하시겠습니까?")) {
+	        axios({
+	            method: 'get',
+	            url: 'productdelete?productCode=' + productCode
+	        })
+	        .then(function (response) {
+	            // 삭제 성공
+	            window.location.href = 'productmanageform';
+	        })
+	        .catch(function (error) {
+	            // 삭제 실패 시 에러 메시지 출력
+	            alert(error);
+	        });
+	    } else {
+	        // 취소
+	        return false;
+	    }
+	} 
+</script>
+</body>
+</html>

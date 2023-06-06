@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorate="~{layout/layout}">
+				
+<th:block layout:fragment="content">
+<head>
+<link rel="stylesheet" href="../assets/css/notice.css" />
+<style type="text/css"></style>
+</head>
+<body>
+
+<section class="notice">
+  <div class="page-title">
+        <div class="container1">
+            <h3>공지사항</h3>
+        </div>
+    </div>
+
+ 
+   
+  <!-- board list area -->
+  
+  <div id="board-list">
+    <div class="container1">
+        <table class="board-table">
+            <thead>
+            <tr>
+                <th scope="col" class="th-num">번호</th>
+                <th scope="col" class="th-title">제목</th>
+                <th scope="col" class="th-date">등록일</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="notice : ${notice}">
+                <td th:text="${notice.noticeNo}"></td>
+                <td>
+                  <a th:href="@{'detail/' + ${notice.noticeNo}}" th:text="${notice.noticeTitle}"></a>
+                </td>
+                <!-- 날짜만 출력되도록 -->
+                <td th:text="${#dates.format(notice.noticeRegdate, 'yyyy-MM-dd')}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<br>
+
+</section>
+
+</body>
+</th:block>
+</html>

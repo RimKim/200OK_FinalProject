@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<th:block layout:fragment="content">
+	<head>
+<link th:href="@{/assets/css/cart.css}" rel="stylesheet" type="text/css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style type="text/css"></style>
+	</head>
+	<body>
+
+		<div class="cart_table">
+			<p>CART</p>
+			<ul class="cart_list">
+				<li>
+					<div class="checkbox">
+						<input type="checkbox" name="all_chk" id="all_chk"> <label
+							for="all_chk">전체선택</label>
+					</div>
+					
+				</li>
+				<!-- 제품 리스트 반복문 시작 -->
+				<li th:each="product,productStat  : ${product}"><input
+					type="hidden" th:value="${product.productCode}" id="item_chk01"
+					name="productCode">
+
+					<div class="checkbox">
+						<input type="checkbox" name="item_chk" id="item_chk01"> <label
+							for="item_chk01"></label>
+					</div>
+					<div class="item_detail">
+
+						<img th:src="@{/image/__${product.productThumbnail}__.jpg}">
+						<p class="name">
+							<strong th:text="${product.productName}"></strong>
+						</p>
+						<p class="txt" th:text="'size  :  '+${product.productSize}"></p>
+					</div>
+					<div class="opt_info">
+						<div class="price_btn">
+							<input type="text"
+								th:value="${quantity[__${productStat.index}__]}" class="number">
+							
+						</div>
+						<div class="total_p">
+							<strong class="price_unit"
+								th:text="${product.productPrice} + '원'"></strong> <span
+								class="del_li_btn"
+								th:onclick="'deleteCart(' + ${product.productCode} + ')'">
+								<img
+								src="https://tictoc-web.s3.ap-northeast-2.amazonaws.com/web/img/icon/btn_del_circle.svg">
+							</span>
+						</div>
+					</div></li>
+				<!-- 제품 리스트 반복문 끝 -->
+			</ul>
+
+
+			<div class="cart_total_area">
+				<p>결제 정보</p>
+
+				<div class="cart_total_price">
+					<p>
+						총 상품금액 <strong class="item_price">[[${totalPrice}]]</strong>원 <span
+							class="plus_ic"></span>
+					</p>
+					<p>
+						총 배송비 <strong class="delivery_price">3000</strong>원 <span
+							class="equal_ic"></span>
+					</p>
+					<p>
+						총 결제금액 <strong class="total_price color-red">[[${totalPrice+3000}]]</strong>원
+					</p>
+				</div>
+			</div>
+
+			<div class="btn_box">
+				<button type="button" onclick="goBack()" class="btn wh-btn">계속
+					쇼핑하기</button>
+				<button type="button" class="btn black-btn" onclick="sendCartData()">구매하기</button>
+			</div>
+
+		</div>
+		
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    //전체 선택 클릭시 
+    $('#all_chk').change(function () {
+      if($("#all_chk").is(":checked")){
+        $("input[name=item_chk]").prop("checked",true);
+      }else{
+        $("input[name=item_chk]").prop("checked",false);
+      }
+      // 전체 체크 순회(체크 확인)
+      var check_cnt=0;
+      $("input:checkbox[name=item_chk]").each(function() {
+         if($("input:checkbox[name=item_chk]").is(":checked") == true){
+            check_cnt++;
+            //console.log(check_cnt)      
+         }
+      });
+      $('.del_btn .num').text(check_cnt);
+    });
+
+   $('input[name="item_chk"]').change(function () {
+
+    var itemLength = $('input[name="item_chk"]').length;
+    var checkedLength = $('input[name="item_chk"]:checked').length;
+    var selectAll = (itemLength == checkedLength);
+    //console.log(checkedLength);
+
+    $('.del_btn .num').text(checkedLength);
+    $('#all_chk').prop('checked', selectAll);
+
+    });
+
+   $('.price_btn input[type="button"]').on('click', function(){
+       var $ths = $(this);
+       var $par = $ths.parent().parent();
+       var $obj = $par.find('input[type="text"]');
+       var val = $obj.val();
+       if ($ths.val()=='-') {
+           if (val > 1)
+               $obj.val(--val);
+       }
+       else if ($ths.val()=='+') {
+           if (val < 30)
+               $obj.val(++val);
+       }
+
+   });
+  
+  
+  });
+  
+//체크박스가 변경될 때마다 실행되는 함수
+function calculateTotalPrice() {
+  // 체크된 상품의 가격을 더해서 총 상품 금액 계산
+  let totalPrice = 0;
+  const checkedItems = document.querySelectorAll('input[name=item_chk]:checked');
+  checkedItems.forEach(item => {
+    const priceElement = item.closest('li').querySelector('.price_unit');
+    const price = parseInt(priceElement.innerText.replace('원', '').replace(',', ''));
+    const quantityElement = item.closest('li').querySelector('.number');
+    const quantity = parseInt(quantityElement.value);
+    totalPrice += price * quantity;
+  });
+  
+  // 총 상품 금액, 총 결제 금액 업데이트
+  const itemPriceElement = document.querySelector('.item_price');
+  const totalPriceElement = document.querySelector('.total_price');
+  const total = totalPrice + 3000;
+  itemPriceElement.innerText = totalPrice.toLocaleString() ;
+  totalPriceElement.innerText = total.toLocaleString();
+}
+
+//전체선택 체크박스 변경 시
+document.querySelector('#all_chk').addEventListener('change', function() {
+  const checkboxes = document.querySelectorAll('input[name=item_chk]');
+  checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+  calculateTotalPrice();
+});
+
+// 개별 체크박스 변경 시
+const checkboxes = document.querySelectorAll('input[name=item_chk]');
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    calculateTotalPrice();
+  });
+});
+
+// 수량 변경 시
+const quantities = document.querySelectorAll('.number');
+quantities.forEach(quantity => {
+  quantity.addEventListener('input', function() {
+    calculateTotalPrice();
+  });
+});
+
+
+
+//삭제 버튼 클릭 시
+function deleteCart(productCode){
+	console.log(productCode);
+	
+		axios({
+		    method: 'get',
+		    url: 'cartdelete?productCode=' + productCode
+		})
+		    .then(function (response) {
+		      // 삭제 성공
+		      //alert("hi");
+		      window.location.href = 'cartform';
+		    })
+		    .catch(function (error) {
+		      // 삭제 실패 시 에러 메시지 출력
+		      alert(error);
+		    })
+}
+
+		function sendCartData() {
+			  var checkedItems = $('input[name="item_chk"]:checked');
+			  var selectedProducts = [];
+			  checkedItems.each(function() {
+			  var productCode = $(this).closest('li').find('input[name="productCode"]').val();
+			  var quantity = $(this).closest('li').find('.number').val();
+			    selectedProducts.push({productCode: productCode, quantity: quantity  });
+			  });
+
+			  $.ajax({
+			    type: "POST",
+			    url: "addcart",
+			    contentType: "application/json",
+			    data: JSON.stringify({ products: selectedProducts }),
+			    success: function(data) {
+			      window.location.replace("/ok/cart/orderform"); // 수정된 부분
+			    },
+			    error: function(xhr, status, error) {
+			      // 오류 처리 로직을 작성
+			    }
+			  });
+			}
+	
+</script>
+	</body>
+</th:block>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/layout}">
+
+<th:block layout:fragment="content">
+	<head>
+<link th:href="@{/assets/css/product-search.css}" rel="stylesheet" type="text/css" />
+<style type="text/css"></style>
+	</head>
+	<body>
+	
+	<h2 style="margin-left: 100px; margin-right: 100px">search</h2>
+	<hr style="margin-left: 100px; margin-right: 100px">
+	<div th:if="${product != null}">
+    <div th:each="p : ${product}" class="container" style="margin-left: 100px; margin-right: 100px">
+        <div class="left" style="margin-left: 100px; margin-right: 100px">
+            <img th:src="@{/image/__${p.productThumbnail}__.jpg}" style="margin-top: 20px" width="150" height="120">
+        </div>
+        <div class="right">
+    		<p style="font-size: 20px; font-weight: bold;">
+   			<a th:href="@{/product/productdetail/{productCode}(productCode=${p.productCode})}">[[${p.productName}]]</a></p>
+            <p><span style="font-weight: bold; font-size: 13px">price : </span> [[${p.productPrice}]] 
+            <br><span style="font-weight: bold; font-size: 13px">productCode : </span>[[${p.productCode}]]
+            <br><span style="font-weight: bold; font-size: 13px">explanation : </span> [[${p.productDetail}]]
+            </p>
+           
+        <hr style="margin-right: 200px;">
+
+        </div>
+       
+    </div>
+</div>
+<div th:if="${product.empty}">
+<br><br><br>
+<div align="center">
+    <p>검색 결과가 없습니다.</p>
+</div>
+</div>
+
+	</body>
+</th:block>
+</html>

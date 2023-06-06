@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link th:href="@{/assets/css/admin-user-update.css}" rel="stylesheet"
+	type="text/css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+<style type="text/css"></style>
+</head>
+<body>
+	<div class="area"></div>
+	<nav class="main-menu">
+
+		<ul>
+			<li><br> <a href="https://jbfarrow.com"> <i
+					class="fa fa-home fa-2x"></i> <span class="nav-text"> 홈으로 이동
+				</span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/usermanageform}">
+					<i class="fa fa-comments fa-2x"></i> <span class="nav-text">
+						회원 관리 </span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/productmanageform}">
+					<i class="fa fa-camera-retro fa-2x"></i> <span class="nav-text">
+						상품 관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/ordermanageform}"> <i
+					class="fa fa-book fa-2x"></i> <span class="nav-text"> 주문관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/moveMain}"> <i
+					class="fa fa-map-marker fa-2x"></i> <span class="nav-text">
+						쇼핑몰 메인으로 이동 </span>
+			</a></li>
+
+
+			<ul class="logout">
+				<li><a th:href="@{/admin/logout}"> <i
+						class="fa fa-power-off fa-2x"></i> <span class="nav-text">
+							Logout </span>
+				</a></li>
+			</ul>
+		</ul>
+	</nav>
+
+
+	<!-- Contents -->
+	<br>
+	<br>
+
+	<div align="center">
+		<h1 style="font-size: 3em;">주문관리</h1>
+		<br> <br>
+	</div>
+
+	<!--회원 정보 수정 -->
+	<form action="/ok/admin/orderupdate" method="POST">
+		<div class="d-div" style="padding: 20px;">
+			<div class="sign">
+
+				<h3>주문 정보 수정</h3>
+				<hr class="hr1">
+				<div class="sign-text">
+					<h5 style="line-height: 3em;">
+						주문번호
+						<!-- <span style="color:red;">*</span> -->
+						</h3>
+				</div>
+				<div class="sign-input">
+
+					<div style="font-size: 18px; font-weight: bold;">[[${orders.orderCode}]]</div>
+					(주문번호는 변경 불가합니다.)
+				</div>
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">결제 방법</h5>
+				</div>
+				<div class="sign-input">
+					<h5>[[${orders.orderPayment}]]</h5>
+				</div>
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">결제 총금액</h5>
+					<br>
+				</div>
+				<div class="sign-input">
+					<h5>[[${orders.orderTotalprice}]]</h5>
+				</div>
+
+				<hr class="hr2">
+
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">결제상태</h5>
+
+				</div>
+
+				<div class="sign-input">
+					  <select  name="orderStatus" style="margin-bottom: 3px;">
+						<option value="입금전">입금전</option>
+						<option value="결제완료">결제완료</option>
+						<option value="배송중">배송중</option>
+						<option value="배송완료">배송완료</option>
+					</select> 
+					&nbsp;현재 상태 : [[${orders.orderStatus}]]
+
+					
+				</div>
+
+				<hr class="hr2">
+
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">받는분 성함</h5>
+
+				</div>
+
+				<div class="sign-input">
+					<input type="text" name="deliveryName"
+						th:value="${orders.deliveryName}" class="ia">
+				</div>
+
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 8.5em;">주소</h5>
+				</div>
+				<div class="sign-input">
+					<input type="text" name="deliveryAdd1" readonly="readonly"
+						th:value="${orders.deliveryAdd1}" class="ib">&nbsp;-&nbsp;
+					<a class="d-button" onClick="execPostCode()">우편번호 찾기</a> <br>
+					<input type="text" name="deliveryAdd2" readonly="readonly"
+						class="ia" th:value="${orders.deliveryAdd2}"
+						style="margin-top: 10px; width: 300px;"> 기본주소 <br> <input
+						type="text" name="deliveryAdd3" class="ia"
+						th:value="${orders.deliveryAdd3}"
+						style="margin-top: 10px; width: 300px;"> 상세주소
+
+				</div>
+				<br>
+				<hr class="hr2">
+
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">받는분 전화번호</h5>
+
+				</div>
+
+				<div class="sign-input">
+					<input type="text" name="deliveryMobile"
+						th:value="${orders.deliveryMobile}" class="ia">
+				</div>
+				<hr class="hr2">
+
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">배송메모</h5>
+
+				</div>
+
+				<div class="sign-input">
+					<input type="text" name="deliveryMemo"
+						th:value="${orders.deliveryMemo}" class="ia">
+				</div>
+			<hr class="hr2">
+
+			</div>
+			 <input type="hidden" name="orderCode" required th:value="${orders.orderCode}">
+			<input type="hidden" name="userId" required th:value="${orders.userId.userId}">
+			<input type="hidden" name="orderRegdate" required th:value="${orders.orderRegdate}">
+			<input type="hidden" name="orderPayment" required th:value="${orders.orderPayment}">
+			<input type="hidden" name="orderTotalprice" required th:value="${orders.orderTotalprice}">
+			<div align="center">
+				<button id="my-button">회원정보 수정</button>
+			</div>
+		</div>
+
+	</form>
+
+	<script>
+		//도로명api
+		function execPostCode() {
+			new daum.Postcode({
+				oncomplete : function(data) {
+
+					var fullRoadAddr = data.roadAddress;
+					var extraRoadAddr = ''; // 
+
+					if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+						extraRoadAddr += data.bname;
+					}
+					if (data.buildingName !== '' && data.apartment === 'Y') {
+						extraRoadAddr += (extraRoadAddr !== '' ? ', '
+								+ data.buildingName : data.buildingName);
+					}
+					if (extraRoadAddr !== '') {
+						extraRoadAddr = ' (' + extraRoadAddr + ')';
+					}
+					if (fullRoadAddr !== '') {
+						fullRoadAddr += extraRoadAddr;
+					}
+
+					console.log(data.zonecode);
+					console.log(fullRoadAddr);
+
+					$("[name=deliveryAdd1]").val(data.zonecode);
+					$("[name=deliveryAdd2]").val(fullRoadAddr);
+
+				}
+			}).open();
+		}
+	</script>
+</body>
+</html>

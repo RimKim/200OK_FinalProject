@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorate="~{layout/layout}">
+				
+<th:block layout:fragment="content">
+<head>
+
+<link th:href="@{/assets/css/adress-list.css}" rel="stylesheet" type="text/css" />
+<style type="text/css"></style>
+<link rel="stylesheet" href="../assets/css/user-update.css" />
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"> </script>
+</head>
+<body>
+	
+		<br><br><br><br><br><br>
+
+
+<!-- 배송지 목록 -->
+
+	
+	<div>
+	 <div style=" font-size: 25px;" align="center" th:text = "${user.userName} + '님의 배송지 목록'" ></div>
+	 
+	 <div class="task" id="task2" th:each="d : ${delivery}">
+  <ul>
+    <li>
+      <div><span style="font-weight: bold;font-size: 20px;">Name</span><br></div>
+      <div style="font-size: 15px;" th:text="${d.deliveryName}"></div>
+      <br>
+      <div><span style="font-weight: bold;font-size: 20px;">Mobile</span><br></div>
+      <div style="font-size: 15px;" th:text="${d.deliveryMobile}"></div>
+      <br>
+      <div><span style="font-weight: bold;font-size: 20px;">Address</span><br></div>
+      <div style="font-size: 15px;" th:text="'(우편 번호 ' + ${d.deliveryAdd1} + ' )'"></div>
+      <div style="font-size: 15px;" th:text="${d.deliveryAdd2} + '  ' + ${d.deliveryAdd3}"></div>
+      
+      <div align="right">
+        <form action="../mypage/deliveryupdateform" method="GET">
+      <input type="hidden" name="deliveryId" th:value="${d.deliveryId}">
+  		<button type="submit">수정</button>
+</form>
+
+		<button th:onclick="'deleteDelivery(' + ${d.deliveryId} + ')'">삭제</button>
+
+    
+        <!-- 기본 배송지인 경우 -->
+        <th:block th:if="${d.deliveryBasicyn == 'Y'}">
+          <div  style="font-size: 16px;">기본 배송지</div>
+        </th:block>
+
+      </div>
+    </li>
+  </ul>
+</div>
+  
+<div align="right">
+	<button onclick="location.href='../mypage/deliveryaddform'">배송지 추가</button>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+</div>
+
+		
+	</div>
+            
+
+  
+
+<br><br><br><br>
+
+<!-- axios 사용 설정 -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+  
+  function deleteDelivery(deliveryId) {
+	
+	  axios({
+		    method: 'get',
+		    url: 'deliverydelete?deliveryId=' + deliveryId
+		  })
+		    .then(function (response) {
+		      // 삭제 성공
+		      //alert("hi");
+		      window.location.href = 'adresslist';
+		    })
+		    .catch(function (error) {
+		      // 삭제 실패 시 에러 메시지 출력
+		      alert(error);
+		    })
+		   
+	}
+  </script>
+
+  </body>
+  </th:block>
+  </html>

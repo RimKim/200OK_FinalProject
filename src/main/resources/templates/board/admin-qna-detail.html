@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+<th:block layout:fragment="content">
+<head>
+    <link th:href="@{/assets/css/main.css}" rel="stylesheet" type="text/css" />
+
+
+ <style>
+  table {
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid gray;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: darkgray;
+    color: white;
+  }
+
+  button {
+    background-color: darkgray;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+
+  button:hover {
+    background-color: gray;
+  }
+
+  #answer-list table td,
+  #answer-list table th {
+    border: none;
+  }
+
+  #answer-list td.answer-content {
+    font-weight: bold;
+  }
+
+  #answer-list td.answer-date {
+    font-weight: bold;
+  }
+
+  #answer-list table {
+    border-collapse: collapse;
+    width: 50%; /* adjust the width as desired */
+    margin: auto;
+  }
+
+  #answer-list th, #answer-list td {
+    padding: 5px; /* adjust the padding as desired */
+    border: 1px solid gray;
+    vertical-align: top;
+  }
+  
+  
+  #answer-form {
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+#answer-form textarea {
+    display: block;
+    margin: 0 auto;
+}
+
+button[type="submit"] {
+  
+    bottom: 0;
+    right: 0;
+    margin-top: 10px;
+}
+
+</style>
+
+ 
+</head>
+
+<body>
+
+
+<section class="question">
+ 
+<br><br><br><br><br>
+  <!-- board detail area -->
+
+  <div id="board-list" >
+    <div class="container1">
+    
+        <table class="board-table" align="center" cellpadding="5" cellspacing="2" width="60%" border='1'>
+
+            <tr>
+                <td width="100" height="20">
+                    <p align="right">
+                        <b><span style="font-size: 12pt;">작성일</span></b>
+                    </p>
+                </td>
+                <td width="450" height="20" colspan="3">
+                    <span style="font-size: 12pt;"><b th:text="${question[0].questionRegdate}"></b></span>
+                </td>
+            </tr> 
+            <tr>
+                <td width="100" height="20">
+                    <p align="right">
+                        <b><span style="font-size: 12pt;">제 목</span></b>
+                    </p>
+                </td>
+                <td width="450" height="20" colspan="3">
+                    <span style="font-size: 12pt;"><b th:text="${question[0].questionTitle}"></b></span>
+                </td>
+            </tr>
+            <tr>
+                <td width="100" height="200" valign="top">
+                    <p align="right">
+                        <b><span style="font-size: 12pt;">내 용</span></b>
+                    </p>
+                </td>
+                <td width="450" height="200" valign="top" colspan="3">
+                    <span style="font-size: 12pt;"><b th:utext="${question[0].questionContent}"></b></span>
+                </td>
+            </tr>
+        <td height="20" colspan="4" align="center" valign="middle">
+			<!-- 버튼 누르면 삭제 메시지 출력되도록 메시지 보내기 필요함 -->
+			<form th:action= @{/question/delete} method="GET">
+      			<input type="hidden" name="questionNo" th:value="${question[0].questionNo}">
+  			<button type="submit">삭제</button>
+  			</form></td>
+        </table>
+        
+    </div>
+    
+</div>
+
+<br>
+
+<!-- 답변 작성 폼 -->
+<div id="answer-form" class="container1" >
+    <form th:action="@{/answer/answersave}" method="post">
+        <input type="hidden" name="questionNo" th:value="${question[0].questionNo}" />
+
+        <div class="form-group">
+            
+            <textarea class="form-control" name="answerContent" rows="5" style="width: 200%; height: 150px;" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">답변 등록</button>
+    </form>
+</div>
+
+<br>
+<br>
+<!-- 답변 리스트 -->
+<div id="answer-list" class="container1">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>답변 내용</th>
+        <th>작성일</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 답변 리스트를 조회하고 HTML로 표시하는 부분 -->
+      <tr th:each="answer : ${answers}">
+        <td th:utext="${answer.answerContent}"></td>
+        <td th:text="${#dates.format(answer.answerRegdate, 'yyyy-MM-dd HH:mm:ss')}"></td>
+        <td>
+          <form th:action="@{/answer/delete}" method="GET">
+            <input type="hidden" name="answerNo" th:value="${answer.answerNo}" />
+            <button type="submit" class="btn btn-sm btn-danger">삭제</button>
+          </form>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</section>
+</body>
+</th:block>
+</html>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:fragment="headerFragment">
+   <head>
+<!-- Common Head -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <body>
+    
+
+      <!-- title -->
+      <div class="d-box">
+         <div class="titl">
+            <div style="float: left; margin: 0 20px;">
+               <a th:href="@{/user/logo}"> <img th:src="@{/image/logo.png}"
+                  width="70">
+               </a>
+            </div>
+            <ul class="f-list">
+              <li><a th:href="@{/product/best}">Best</a></li>
+               <li><a href="">Products</a>
+                  <ul class="list-s">
+
+                     <li style="font-size: 0.8rem;"><a
+                        th:href="@{/product/ringlist}">ring</a></li>
+                     <li style="font-size: 0.8rem;"><a
+                        th:href="@{/product/braceletlist}">bracelet</a></li>
+                     <li style="font-size: 0.8rem;"><a
+                        th:href="@{/product/necklacelist}">necklace</a></li>
+                     <li style="font-size: 0.8rem;"><a th:href="@{/product/earringlist}">earring</a></li>
+                     <li style="font-size: 0.8rem;"><a th:href="@{/product/watchlist}">watch</a></li>
+                     <li style="font-size: 0.8rem;"><a th:href="@{/product/objectlist}">object</a></li>
+                  </ul></li>
+               <li><a th:href="@{/qna/qnalist}">QnA</a></li>
+               <li><a th:href="@{/notice/noticelist}">Notice</a></li>
+            </ul>
+
+            <div th:if="${userName eq ''}">
+               <ul class="s-list">
+               
+                  <li><a id="search-btn">검색</a></li>
+                  <li><a th:href="@{/user/login}">로그인</a></li>
+               </ul>
+            </div>
+
+            <div th:if="${userName ne ''}">
+               <ul class="s-list">
+                  <li><a th:href="@{/cart/cartform}">장바구니</a></li>
+                   <li><a id="search-btn">검색</a></li>
+                  
+                  <li><a th:href="@{/mypage/home}">마이페이지</a></li>
+                  <li><a th:href="@{/user/logout}">로그아웃</a></li>
+          
+               </ul>
+            </div>
+
+         </div>
+
+
+
+         <br>
+   </body>
+
+   </head>
+</th:block>
+
+</html>

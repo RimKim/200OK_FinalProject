@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link th:href="@{/assets/css/admin-user-update.css}" rel="stylesheet"
+	type="text/css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+<style type="text/css"></style>
+</head>
+<body>
+	<div class="area"></div>
+	<nav class="main-menu">
+
+		<ul>
+			<li><br> <a href="https://jbfarrow.com"> <i
+					class="fa fa-home fa-2x"></i> <span class="nav-text"> 홈으로 이동
+				</span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/usermanageform}">
+					<i class="fa fa-comments fa-2x"></i> <span class="nav-text">
+						회원 관리 </span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/productmanageform}">
+					<i class="fa fa-camera-retro fa-2x"></i> <span class="nav-text">
+						상품 관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/ordermanageform}"> <i
+					class="fa fa-book fa-2x"></i> <span class="nav-text"> 주문관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/moveMain}"> <i
+					class="fa fa-map-marker fa-2x"></i> <span class="nav-text">
+						쇼핑몰 메인으로 이동 </span>
+			</a></li>
+
+
+			<ul class="logout">
+				<li><a th:href="@{/admin/logout}"> <i
+						class="fa fa-power-off fa-2x"></i> <span class="nav-text">
+							Logout </span>
+				</a></li>
+			</ul>
+		</ul>
+	</nav>
+
+
+
+	<!-- Contents -->
+	<br>
+	<br>
+
+	<div align="center">
+		<h1 style="font-size: 3em;">회원관리</h1>
+		<br> <br>
+	</div>
+
+	<!--회원 정보 수정 -->
+	<form action="/ok/admin/userupdate" method="POST">
+		<div class="d-div" style="padding: 20px;">
+			<div class="sign">
+
+				<h3>회원 정보 수정</h3>
+				<hr class="hr1">
+				<div class="sign-text">
+					<h5 style="line-height: 3em;">
+						아이디
+						<!-- <span style="color:red;">*</span> -->
+						</h3>
+				</div>
+				<div class="sign-input">
+
+					<div style="font-size: 20px; font-weight: bold;">[[${user.userId}]]</div>
+					(아이디는 변경 불가합니다.)
+				</div>
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">이름</h5>
+				</div>
+				<div class="sign-input">
+					<input type="text" name="userName" th:value="${user.userName}"
+						class="ia">
+				</div>
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">가입유형</h5>
+					<br>
+				</div>
+				<div class="sign-input">
+					<h5>[[${user.userProvider}]]</h5>
+				</div>
+
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">비밀번호</h5>
+				</div>
+				<div class="sign-input">
+					<input type="password" name="userPwd" th:value="${user.userPwd}"
+						class="ia">(영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
+				</div>
+
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 8.5em;">주소</h5>
+				</div>
+				<div class="sign-input">
+					<input type="text" name="userAddr1" readonly="readonly"
+						th:value="${user.userAddr1}" class="ib">&nbsp;-&nbsp; <a
+						class="d-button" onClick="execPostCode()">우편번호 찾기</a> <br> <input
+						type="text" name="userAddr2" readonly="readonly" class="ia"
+						th:value="${user.userAddr2}"
+						style="margin-top: 10px; width: 300px;"> 기본주소 <br> <input
+						type="text" name="userAddr3" class="ia"
+						th:value="${user.userAddr3}"
+						style="margin-top: 10px; width: 300px;"> 상세주소
+				</div>
+				<br>
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">이메일</h5>
+
+				</div>
+
+				<div class="sign-input">
+					<input type="text" name="userEmail" th:value="${user.userEmail}"
+						class="ia">
+				</div>
+
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">전화 번호</h5>
+				</div>
+				<div class="sign-input">
+					<input type="text" name="userPhone" th:value="${user.userPhone}"
+						class="ia">
+				</div>
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">핸드폰 번호</h5>
+				</div>
+				<div class="sign-input">
+					<input type="text" name="userMobile" th:value="${user.userMobile}"
+						class="ia">
+				</div>
+
+				<hr class="hr2">
+
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">SNS 연동 여부</h5>
+				</div>
+				<br>
+				<div class="sign-input">
+					<label> <input type="radio" name="userSnswhether" value="Y"
+						th:checked="${user.userSnswhether == 'Y'}"> Y
+					</label> <label> <input type="radio" name="userSnswhether"
+						value="N" th:checked="${user.userSnswhether == 'N'}"> N
+					</label>
+				</div>
+
+				<hr class="hr2">
+
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">이메일 연동 여부</h5>
+				</div>
+				<br>
+				<div class="sign-input">
+					<label> <input type="radio" name="userEmailwhether"
+						value="Y" th:checked="${user.userEmailwhether == 'Y'}"> Y
+					</label> <label> <input type="radio" name="userEmailwhether"
+						value="N" th:checked="${user.userEmailwhether == 'N'}"> N
+					</label>
+				</div>
+				<hr class="hr2">
+
+			</div>
+			<input type="hidden" name="userId" required th:value="${user.userId}">
+			<input type="hidden" name="userRole" required th:value="${user.userRole}"> 
+			<input type="hidden" name="userRegdate" required th:value="${user.userRegdate}">
+			<input type="hidden" name="userProvider" required th:value="${user.userProvider}">
+			<div align="center">
+				<button id="my-button">회원정보 수정</button>
+			</div>
+		</div>
+
+	</form>
+
+	<script>
+		//도로명api
+		function execPostCode() {
+			new daum.Postcode({
+				oncomplete : function(data) {
+
+					var fullRoadAddr = data.roadAddress;
+					var extraRoadAddr = ''; // 
+
+					if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+						extraRoadAddr += data.bname;
+					}
+					if (data.buildingName !== '' && data.apartment === 'Y') {
+						extraRoadAddr += (extraRoadAddr !== '' ? ', '
+								+ data.buildingName : data.buildingName);
+					}
+					if (extraRoadAddr !== '') {
+						extraRoadAddr = ' (' + extraRoadAddr + ')';
+					}
+					if (fullRoadAddr !== '') {
+						fullRoadAddr += extraRoadAddr;
+					}
+
+					console.log(data.zonecode);
+					console.log(fullRoadAddr);
+
+					$("[name=userAddr1]").val(data.zonecode);
+					$("[name=userAddr2]").val(fullRoadAddr);
+
+				}
+			}).open();
+		}
+
+	</script>
+</body>
+</html>

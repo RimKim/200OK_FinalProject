@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorate="~{layout/layout}">
+				
+<th:block layout:fragment="content">
+<head>
+<link rel="stylesheet" href="../assets/css/main.css" />
+<style type="text/css"></style>
+<script type="text/javascript" rc="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="/ok/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
+</head>
+<body>
+
+			<form action="updatePost" method="post" 
+			style="display: flex; flex-direction: column; align-items: center;">
+			<input type="hidden" name="noticeNo" required th:value="${notice[0].noticeNo}">
+			<!-- 공지 제목 -->
+			<div style="width: 80%; margin-bottom: 20px;">
+				<input name="noticeTitle" placeholder="제목을 입력해주세요" th:value="${notice[0].noticeTitle}"
+					style="width: 99.5%; border: 1px solid #ccc; height: 40px;"></input>
+			</div> 
+			<div id="smarteditor" style="width: 80%; margin-bottom: 20px;">
+ 			 <textarea name="noticeContent" id="editorTxt" rows="20" cols="10"
+            placeholder="내용을 입력해주세요" style="width: 80%">[[${notice[0].noticeContent}]]</textarea>
+			</div>
+			 <div
+				style="width: 20%; margin-bottom: 20px; display: flex; align-items: center;">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">
+						공지 상단 고정 여부<span style="color: red;"></span>
+					</h5>
+				</div>
+				<div class="sign-input" style="margin-left: auto;">
+					<label><input type="radio" name="noticeCategory" value="1">예</label> 
+					<label><input type="radio" name="noticeCategory" value="2" checked> 아니오</label>
+				</div>
+			</div> 
+			
+			<button onclick ="savePost();">전송</button>
+
+		</form>
+
+	<script>
+    let oEditors = []
+
+    smartEditor = function() {
+      console.log("Naver SmartEditor")
+      nhn.husky.EZCreator.createInIFrame({
+        oAppRef: oEditors,
+        elPlaceHolder: "editorTxt",
+        sSkinURI: "/ok/smarteditor/SmartEditor2Skin.html",
+        fCreator: "createSEditor2"
+      })
+    }
+
+    $(document).ready(function() {
+      smartEditor()
+    })
+
+    
+      savePost = function() {
+    	  oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", []);
+    	  let content = document.getElementById("editorTxt").value;
+    	  let title = document.getElementsByName("noticeTitle")[0].value;
+    	  let category = document.querySelector('input[name="noticeCategory"]:checked').value;
+    	  let noticeNo = document.getElementsByName("noticeNo")[0].value;
+
+    	  if(content == '') {
+    	    alert("내용을 입력해주세요.");
+    	    oEditors.getById["editorTxt"].exec("FOCUS");
+    	    return;
+    	  } else {
+    	    let post = {
+    	      noticeContent: content,
+    	      noticeTitle: title,
+    	      noticeCategory: category,
+    	      noticeNo: noticeNo
+    	    };
+
+    	    $.ajax({
+    	      url: "updatePost",
+    	      //url: "savepost",
+    	      data: post,
+    	      success: function(data) {
+    	        console.log('success');
+    	        alert('저장하였습니다.');
+    	      },
+    	      error: function(jqXHR, textStatus, errorThrown) {
+    	        console.log(jqXHR);
+    	        alert('오류가 발생하였습니다.');
+    	      },
+    	    });
+    	  }
+    	}
+      
+
+</script>
+
+</body>
+</th:block>
+</html>

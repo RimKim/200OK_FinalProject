@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorate="~{layout/layout}">
+				
+<th:block layout:fragment="content">
+<head>
+
+<link th:href="@{/assets/css/adress-list.css}" rel="stylesheet" type="text/css" />
+<style type="text/css"></style>
+<link rel="stylesheet" href="../assets/css/user-update.css" />
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"> </script>
+</head>
+<body>
+	
+		<br><br><br><br><br><br>
+
+
+<!--배송지 추가-->
+<form action="deliveryadd" method="post">
+  <div class="d-div" style="padding:20px;">
+    <div class="sign">
+      <h3>배송지 추가</h3>
+      <hr class="hr1">
+      <div class="sign-text">
+        <h5 style="line-height:3em;">이름<span style="color:red;">*</span></h5>
+      </div>
+      <div class="sign-input">
+        <input type="hidden" name="userId" required th:value="${user.userId}">
+         <input type="hidden" name="deliveryId" required th:value="${delivery.deliveryId}">
+        <input type="text" class="ia"  th:value="${delivery.deliveryName}" name="deliveryName">
+      </div>
+      <hr class="hr2">
+      <div class="sign-text">
+        <h5 style="line-height:2.5em;">전화번호<span style="color:red;">*</span></h5>
+      </div>
+      <div class="sign-input">
+        <input type="text" class="ia" th:value="${delivery.deliveryMobile}" name="deliveryMobile">
+      </div>
+      <hr class="hr2">
+      <div class="sign-text">
+        <h5 style="line-height:8.5em;">주소<span style="color:red;">*</span></h5>
+      </div>
+      <div class="sign-input">
+        <input type="text" class="ib" th:value="${delivery.deliveryAdd1}" name="deliveryAdd1">&nbsp;&nbsp;
+        <button type="button" onclick="execPostCode();">우편번호 찾기</button>
+        <br>
+        <input type="text" class="ia" name="deliveryAdd2" th:value="${delivery.deliveryAdd2}" style="margin-top:10px; display: inline; width:300px;"readonly="readonly"> 기본주소
+        <br>
+        <input type="text" class="ia" name="deliveryAdd3" th:value="${delivery.deliveryAdd3}" style="margin-top:10px; width:300px;"> 상세주소
+      </div>
+      <hr class="hr2">
+      <div class="sign-text">
+        <h5 style="line-height:2.5em;">배송 메모<span style="color:red;"></span></h5>
+      </div>
+      <div class="sign-input">
+        <input type="text" class="ia" th:value="${delivery.deliveryMemo}" name="deliveryMemo">
+      </div>
+      <hr class="hr2">
+
+      <div class="sign-text">
+        <h5 style="line-height:2.5em;">기본 배송지 여부<span style="color:red;"></span></h5>
+      </div>
+      <div class="sign-input">
+        <label><input type="radio" name="deliveryBasicyn" value="Y"> 예</label>
+        <label><input type="radio" name="deliveryBasicyn" value="N" checked> 아니오</label>
+      </div>
+      <hr class="hr2">
+    </div>
+
+    <div align="center">
+      <button id="my-button" type="submit">배송지 추가</button>
+    </div>
+  </div>
+</form>
+  
+
+<script>
+//도로명api
+function execPostCode() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+
+           var fullRoadAddr = data.roadAddress;
+           var extraRoadAddr = ''; // 
+
+           if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+               extraRoadAddr += data.bname;
+           }
+           if(data.buildingName !== '' && data.apartment === 'Y'){
+              extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+           }
+           if(extraRoadAddr !== ''){
+               extraRoadAddr = ' (' + extraRoadAddr + ')';
+           }
+           if(fullRoadAddr !== ''){
+               fullRoadAddr += extraRoadAddr;
+           }
+
+           console.log(data.zonecode);
+           console.log(fullRoadAddr);
+           
+           
+           $("[name=deliveryAdd1]").val(data.zonecode);
+           $("[name=deliveryAdd2]").val(fullRoadAddr);
+           
+          
+       }
+    }).open();
+}
+</script>
+
+</body>
+</th:block>
+</html>

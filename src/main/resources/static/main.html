@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=3.0">
+<link th:href="@{/assets/css/main.css}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<title>200OK</title>
+<style type="text/css"></style>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.js">
+	
+</script>
+</head>
+<body>
+	
+	<!--title-->
+	<div class="d-box"
+		style="background-image: url('image/main_image.jpg'); background-size: cover; background-repeat: no-repeat; height: 700px; background-position: center;">
+		<div class="titl">
+			<div style="float: left; margin: 0 20px;">
+
+				<a href="user/logo"><img src="image/logo.png" width="70"></a>
+
+			</div>
+			<ul class="f-list">
+				<li><a href="product/best">Best</a></li>
+				<li><a href="#">Products</a>
+					<ul class="list-s">
+						<li style="font-size: 0.8rem;"><a href="product/ringlist">ring</a></li>
+						<li style="font-size: 0.8rem;"><a href="product/braceletlist">bracelet</a></li>
+						<li style="font-size: 0.8rem;"><a href="product/necklacelist">necklace</a></li>
+						<li style="font-size: 0.8rem;"><a href="product/earringlist">earring</a></li>
+						<li style="font-size: 0.8rem;"><a href="product/watchlist">watch</a></li>
+						<li style="font-size: 0.8rem;"><a href="product/objectlist">object</a></li>
+					</ul></li>
+				<li><a href="qna/qnalist">QnA</a></li>
+				<li><a href="notice/noticelist">Notice</a></li>
+			</ul>
+			<ul class="s-list" id="menu">
+
+				<li><a href="cart/cartform">장바구니</a></li>
+				<li><a id="search-btn">검색</a></li>
+				<li><a href="mypage/home">마이페이지</a></li>
+				<li><a href="user/logout">로그아웃</a></li>
+				</ul>
+
+		</div>
+		
+
+	</div>
+<div id="search-container" class="hidden">
+</div>
+
+	<br>
+	<br>
+	<br>
+	<!-- 신 메뉴 -->
+	<h3 style="margin-left: 200px;">NEW ARRIVAL</h3>
+	<hr style="margin-left: 200px; margin-right: 200px;">
+	<div>
+
+		<div id="app" align="right">
+			<main class="app-main">
+				<h2 class="a11y-hidden">이디야 음료</h2>
+				<ul class="ediya-menu reset-list">
+					<li class="ediya-menu__item"><a href="#" role="button"
+						aria-haspopup="dialog" aria-pressed="false">
+							<figure>
+								<img src="image/bestproduct_5.png" alt="" width="323"
+									height="323" />
+								<figcaption>PENDANT BRACELET</figcaption>
+							</figure>
+					</a>
+						<div role="dialog" aria-modal="false"
+							aria-labelledby="dialog-1-label">
+							<h3 id="dialog-1-label" class="a11y-hidden">ICED 벚꽃라떼</h3>
+						</div></li>
+					<li class="ediya-menu__item"><a href="#" role="button"
+						aria-haspopup="dialog" aria-pressed="false">
+							<figure>
+								<img src="image/bestproduct_2.png" alt="" width="323"
+									height="323" />
+								<figcaption>LUCKY RING</figcaption>
+							</figure>
+					</a></li>
+					<li class="ediya-menu__item"><a href="#" role="button"
+						aria-haspopup="dialog" aria-pressed="false">
+							<figure>
+								<img src="image/bestproduct_1.png" alt="" width="323"
+									height="323" />
+								<figcaption>LUCKY NECKLACE</figcaption>
+							</figure>
+					</a></li>
+					<li class="ediya-menu__item"><a href="#" role="button"
+						aria-haspopup="dialog" aria-pressed="false">
+							<figure>
+								<img src="image/bestproduct_4.png" alt="" width="323"
+									height="323" />
+								<figcaption>PENDANT RING</figcaption>
+							</figure>
+					</a></li>
+
+				</ul>
+
+			</main>
+			<hr style="margin-left: 200px; margin-right: 200px;">
+		</div>
+
+	</div>
+	
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<h3 style="margin-left: 200px;">offline Shop</h3>
+	<hr style="margin-left: 200px; margin-right: 200px;">
+	<br>
+	<div class="container1" align="center">
+		<div class="map-container">
+			<div id="map" style="width: 500px; height: 400px;"></div>
+		</div>
+		<div class="description-container" style="margin-left: 50px">
+			<h3>📌 찾아오시는 길</h3>
+			<h5>종로3가역 8번 출구 5분거리</h5>
+			<br>
+			<p>200ok가 오프라인 매장을 오픈했습니다!</p>
+			<p>오프라인 매장 오픈 기념 행사도 준비되어있으니 많은 관심 부탁드립니다</p>
+			<p></p>
+		</div>
+	</div>
+	<br>
+	<hr style="margin-left: 200px; margin-right: 200px;">
+	<br>
+	<br>
+	<br>
+	<!-- 연속 슬라이드 -->
+	<div class="section section-6">
+		<div class="container">
+			<h1>
+
+				<img src="image/banner_title.png" alt="" width="350" height="300">
+			</h1>
+		</div>
+		<div class="slide-box">
+			<ul>
+				<li class="bottom" style="width: 495px;"><a href="#">
+						<div class="text-box">
+							<p>10% SALE</p>
+						</div>
+						<div class="img-box">
+							<img src="image/banner_01.png" alt="" width="500" height="250">
+						</div>
+				</a></li>
+				<li class="top" style="width: 724px;"><a href="#">
+						<div class="text-box green">
+							<p>5% SALE</p>
+						</div>
+						<div class="img-box">
+							<img src="image/banner_02.png" alt="" width="650" height="500">
+						</div>
+				</a></li>
+				<li class="bottom" style="width: 559px;"><a href="#">
+						<div class="text-box green">
+							<p>5% SALE</p>
+						</div>
+						<div class="img-box">
+							<img src="image/banner_03.png" alt="" width="650" height="350">
+						</div>
+				</a></li>
+				<li class="top" style="width: 500px;"><a href="#">
+						<div class="img-box">
+							<img src="image/banner_04.png" alt="" width="500" height="450">
+						</div>
+				</a></li>
+				
+				<!-- 연속되게 보이기 -->
+				<li class="bottom" style="width: 495px;"><a href="#">
+						<div class="text-box">
+							<p>10% SALE</p>
+						</div>
+						<div class="img-box">
+							<img src="image/banner_01.png" alt="" width="500" height="250">
+						</div>
+				</a></li>
+				<li class="top" style="width: 724px;"><a href="#">
+						<div class="text-box green">
+							<p>5% SALE</p>
+						</div>
+						<div class="img-box">
+							<img src="image/banner_02.png" alt="" width="500" height="450">
+						</div>
+				</a></li>
+				<li class="bottom" style="width: 559px;"><a href="#">
+						<div class="text-box green">
+							<p>5% SALE</p>
+						</div>
+						<div class="img-box">
+							<img src="image/banner_03.png" alt="" width="650" height="350">
+						</div>
+				</a></li>
+				<li class="top" style="width: 500px;"><a href="#">
+						<div class="img-box">
+							<img src="image/banner_04.png" alt="" width="500" height="450">
+						</div>
+				</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+
+
+	<!--footer1-->
+	<div class="d-box" style="background-color: #eee; padding: 30px 0px;">
+		<div class="dd-box">
+			<div class="container">
+				<div class="con1">
+					고객센터
+					<hr>
+					<p style="font-size: 1.1rem;">
+						1600-0000<br>
+						<!-- <a href="#">카카오톡 플러스 친구</a> -->
+					</p>
+					<small>제품문의 · </small>
+					<p>평일 09:30 - 17:30 | 점심시간 12:30 - 13:30
+				</div>
+				<div class="con2">
+					기업고객 문의
+					<hr>
+					<p style="font-size: 1.1rem;">
+						02-2222-22222<br> <a href="#">help@200OK.com</a>
+					</p>
+					<p>평일 10:30 - 17:30 | 점심시간 12:00 - 13:00
+				</div>
+				<div class="con3">
+					Quick Menu
+					<hr>
+					<a href="#"> About US</a><br> <a href="#"
+						style="font-weight: bold;">개인정보처리방침</a><br> <a href="#">이용약관</a>
+				</div>
+				<div class="con4">
+					(주)200OK | 대표이사 · 김행운 | 서울특별시 영등포구 hta로 200OK <br> 1600-0000 |
+					<a href="#">luckyham@200OK.com</a> | 사업자등록번호 · 000-00-0000
+					<p>
+						통신판매업신고 · 2023-서울송파-0000호 | 부가통신사업신고필증 · 000000 <br> 개인정보보호 및
+						청소년보호 책임자 · 김행운
+					<p>Copyright (c) 2023 200OK Inc. All rights reserved
+					<p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--footer2-->
+	<div class="d-box" style="background-color: #bbb;">
+
+		<div calss="foo">
+			<div class="foo-ic">
+				<a href="#"><img
+					src="https://www.slou.co.kr/img/front/main/video.png"></a>
+			</div>
+			<div class="foo-ic">
+				<a href="#"><img
+					src="https://www.slou.co.kr/img/front/main/blog.png"></a>
+			</div>
+			<div class="foo-ic">
+				<a href="#"><img
+					src="https://www.slou.co.kr/img/front/main/facebook.png"></a>
+			</div>
+			<div class="foo-ic">
+				<a href="#"><img
+					src="https://www.slou.co.kr/img/front/main/instagram.png"></a>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=474c933b212ecfab546f58afc91463fa&libraries=services,clusterer,drawing"></script>
+	<!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey="></script> -->
+	<script>
+	
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+	mapOption = {
+		center : new kakao.maps.LatLng(35.450701, 126.570667), // 지도의 중심좌표
+		level : 3
+	// 지도의 확대 레벨
+	};
+
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+	var iwContent = '<div style="padding:5px;">200OK 오프라인 쇼핑몰</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	iwPosition = new kakao.maps.LatLng(37.5724, 126.9929), //인포윈도우 표시 위치입니다
+	iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+	// 인포윈도우를 생성하고 지도에 표시합니다
+	var infowindow = new kakao.maps.InfoWindow({
+		map : map, // 인포윈도우가 표시될 지도
+		position : iwPosition,
+		content : iwContent,
+		removable : iwRemoveable
+	});
+	
+	
+	const searchBtn = document.getElementById('search-btn');
+	const searchContainer = document.getElementById('search-container');
+
+	// 검색창과 검색 버튼을 미리 생성하고 삽입합니다.
+	const searchInput = document.createElement('input');
+	searchInput.type = 'text';
+	searchInput.placeholder = '검색어를 입력하세요';
+
+	const submitButton = document.createElement('button');
+	submitButton.innerText = '검색';
+	submitButton.className = 'submit-button';
+
+	searchContainer.appendChild(searchInput);
+	searchContainer.appendChild(submitButton);
+
+	// 검색 버튼에 이벤트 리스너를 추가합니다.
+	submitButton.addEventListener('click', () => {
+	  const searchValue = searchInput.value;
+	  window.location.href = `product/search?keyword=${searchValue}`;
+	});
+
+	// 닫기 버튼에 이벤트 리스너를 추가합니다.
+	const closeButton = document.createElement('span');
+	closeButton.innerHTML = '&times;';
+	closeButton.className = 'close-button';
+	closeButton.addEventListener('click', () => {
+	  searchContainer.removeChild(searchInput);
+	  searchContainer.removeChild(submitButton);
+	  searchContainer.removeChild(closeButton);
+	  searchContainer.classList.add('hidden');
+	});
+	searchContainer.appendChild(closeButton);
+
+	// 검색 버튼을 클릭할 때마다 검색창이 생기지 않도록 수정합니다.
+	searchBtn.addEventListener('click', () => {
+	  if (searchContainer.classList.contains('hidden')) {
+	    searchContainer.classList.remove('hidden');
+	  } else {
+	    searchContainer.classList.add('hidden');
+	  }
+	});
+	
+	// 검색 버튼을 누르면 실행되는 함수
+	submitButton.addEventListener('click', () => {
+		  const searchValue = searchInput.value;
+		  const xhr = new XMLHttpRequest();
+		  xhr.open('GET', `product/search?keyword=${searchValue}`);
+		  xhr.onload = function() {
+		    if (xhr.status === 200) {
+		      // 서버로부터 받은 응답을 처리합니다.
+		    } else {
+		      // 에러 처리를 합니다.
+		    }
+		  };
+		  xhr.send();
+		});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+/*카테고리*/
+INSERT INTO CATEGORY values(1,"earring","gold");
+INSERT INTO CATEGORY values(2,"earring","silver");
+INSERT INTO CATEGORY values(3,"earring","etc");
+INSERT INTO CATEGORY values(4,"ring","gold");
+INSERT INTO CATEGORY values(5,"ring","silver");
+INSERT INTO CATEGORY values(6,"ring","etc");
+INSERT INTO CATEGORY values(7,"bracelet","gold");
+INSERT INTO CATEGORY values(8,"bracelet","silver");
+INSERT INTO CATEGORY values(9,"bracelet","etc");
+INSERT INTO CATEGORY values(10,"necklace","gold");
+INSERT INTO CATEGORY values(11,"necklace","silver");
+INSERT INTO CATEGORY values(12,"necklace","etc");
+INSERT INTO CATEGORY values(13,"watch","gold");
+INSERT INTO CATEGORY values(14,"watch","silver");
+INSERT INTO CATEGORY values(15,"watch","etc");
+INSERT INTO CATEGORY values(16,"objet","perfume");
+INSERT INTO CATEGORY values(17,"objet","candle");
+INSERT INTO CATEGORY values(18,"objet","etc");
+
+/*상품*/
+INSERT INTO PRODUCT values(1,"pendant  earring",80000,"1_thumbNail","1_image1","1_image2","y","y","one",30,2,"우아하고 세련된 디자인,귀에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",1);
+INSERT INTO PRODUCT values(2,"lucky earring",180000,"2_thumbNail","2_image1","2_image2","y","y","one",10,5,"우아하고 세련된 디자인,귀에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",1);
+INSERT INTO PRODUCT values(3,"simple earring",200000,"3_thumbNail","3_image1","3_image2","y","y","one",16,3,"우아하고 세련된 디자인,귀에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",1);
+INSERT INTO PRODUCT values(4,"pendant earring",150000,"4_thumbNail","4_image1","4_image2","y","y","one",30,0,"우아하고 세련된 디자인,귀에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",2);
+INSERT INTO PRODUCT values(5,"lucky earring",100000,"5_thumbNail","5_image1","5_image2","y","y","one",0,25,"우아하고 세련된 디자인,귀에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",2);
+INSERT INTO PRODUCT values(6,"happy earring",160000,"6_thumbNail","6_image1","6_image2","y","y","one",30,2,"우아하고 세련된 디자인,귀에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",2);
+
+
+INSERT INTO PRODUCT values(7,"pendant ring",120000,"7_thumbNail","7_image1","7_image2","y","y","one",1,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",4);
+INSERT INTO PRODUCT values(8,"lucky ring",240000,"8_thumbNail","7_image1","7_image2","y","y","one",5,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",4);
+INSERT INTO PRODUCT values(9,"simple ring",190000,"9_thumbNail","7_image1","7_image2","y","n","one",16,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",4);
+INSERT INTO PRODUCT values(10,"lucky ring",200000,"10_thumbNail","10_image1","10_image2","y","y","one",1,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",5);
+INSERT INTO PRODUCT values(11,"simple ring",240000,"11_thumbNail","11_image1","11_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",5);
+INSERT INTO PRODUCT values(12,"pendant ring",320000,"12_thumbNail","12_image1","12_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",5);
+INSERT INTO PRODUCT values(13,"pendant bracelet",170000,"13_thumbNail","13_image1","13_image2","y","y","one",1,32,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",7);
+INSERT INTO PRODUCT values(14,"simple bracelet",280000,"14_thumbNail","14_image1","14_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",7);
+INSERT INTO PRODUCT values(15,"first bracelet",350000,"15_thumbNail","15_image1","15_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",7);
+INSERT INTO PRODUCT values(16,"pendant bracelet",620000,"16_thumbNail","16_image1","16_image2","y","one","S",1,32,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",8);
+INSERT INTO PRODUCT values(17,"lucky bracelet",450000,"17_thumbNail","17_image1","17_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",8);
+INSERT INTO PRODUCT values(18,"happy bracelet",540000,"18_thumbNail","18_image1","18_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",8);
+
+INSERT INTO PRODUCT values(19,"first candle",300000,"19_thumbNail","19_image1","19_image2","y","y","one",11,20,"천연 원료들의 향을 재해석한 독특한 향초",17);
+INSERT INTO PRODUCT values(20,"first perfume",250000,"20_thumbNail","20_image1","20_image2","y","y","50ml",110,200,"천연 원료들의 향을 재해석한 독특한 향수",16);
+INSERT INTO PRODUCT values(21,"pendant necklace",770000,"21_thumbNail","21_image1","21_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",10);
+INSERT INTO PRODUCT values(22,"simple necklace",670000,"22_thumbNail","22_image1","22_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",10);
+INSERT INTO PRODUCT values(23,"lucky necklace",870000,"23_thumbNail","23_image1","23_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",10);
+INSERT INTO PRODUCT values(24,"simple ring",250000,"24_thumbNail","24_image1","24_image2","y","y","one",1,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",6);
+INSERT INTO PRODUCT values(25,"happy ring",450000,"25_thumbNail","25_image1","25_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",6);
+INSERT INTO PRODUCT values(26,"pendant ring",280000,"26_thumbNail","26_image1","26_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",6);
+INSERT INTO PRODUCT values(27,"pendant ring",120000,"27_thumbNail","27_image1","27_image2","y","y","one",1,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",4);
+INSERT INTO PRODUCT values(28,"lucky ring",240000,"28_thumbNail","27_image1","27_image2","y","y","one",5,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",4);
+
+INSERT INTO PRODUCT values(29,"lucky ring",200000,"29_thumbNail","29_image1","29_image2","y","y","one",1,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",5);
+INSERT INTO PRODUCT values(30,"simple ring",240000,"30_thumbNail","30_image1","30_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",5);
+
+INSERT INTO PRODUCT values(31,"happy ring",450000,"31_thumbNail","31_image1","31_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",6);
+INSERT INTO PRODUCT values(32,"pendant ring",280000,"32_thumbNail","32_image1","32_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",6);
+
+
+INSERT INTO PRODUCT values(33,"lucky ring",240000,"33_thumbNail","33_image1","33_image2","y","y","one",5,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",4);
+INSERT INTO PRODUCT values(34,"simple ring",240000,"34_thumbNail","34_image1","34_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",5);
+INSERT INTO PRODUCT values(35,"pendant ring",280000,"35_thumbNail","35_image1","35_image2","y","y","one",10,2,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",6);
+
+
+
+INSERT INTO PRODUCT values(36,"pendant bracelet",260000,"36_thumbNail","36_image1","36_image2","y","y","one",1,32,"우아하고 세련된 디자인,손에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",9);
+INSERT INTO PRODUCT values(37,"simple bracelet",150000,"37_thumbNail","37_image1","37_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",9);
+INSERT INTO PRODUCT values(38,"happy bracelet",560000,"38_thumbNail","38_image1","38_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",9);
+
+
+INSERT INTO PRODUCT values(39,"pendant necklace",570000,"39_thumbNail","39_image1","39_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",11);
+INSERT INTO PRODUCT values(40,"simple necklace",670000,"40_thumbNail","40_image1","40_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",11);
+INSERT INTO PRODUCT values(41,"lucky necklace",870000,"41_thumbNail","41_image1","41_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",11);
+INSERT INTO PRODUCT values(42,"pendant necklace",570000,"42_thumbNail","42_image1","42_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",12);
+INSERT INTO PRODUCT values(43,"simple necklace",670000,"43_thumbNail","43_image1","43_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",12);
+INSERT INTO PRODUCT values(44,"lucky necklace",870000,"44_thumbNail","44_image1","44_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",12);
+
+
+
+INSERT INTO PRODUCT values(45,"pendant earring",170000,"45_thumbNail","45_image1","45_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",3);
+INSERT INTO PRODUCT values(46,"simple earring",150000,"46_thumbNail","46_image1","46_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",3);
+INSERT INTO PRODUCT values(47,"lucky erring",200000,"47_thumbNail","47_image1","47_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",3);
+
+INSERT INTO PRODUCT values(48,"opal",100000,"48_thumbNail","48_image1","48_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",18);
+
+
+INSERT INTO PRODUCT values(49,"gold watch",880000,"49_thumbNail","49_image1","49_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",13);
+INSERT INTO PRODUCT values(50,"lucky watch",950000,"50_thumbNail","50_image1","50_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",14);
+INSERT INTO PRODUCT values(51,"pocket watch",1000000,"51_thumbNail","51_image1","51_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",15);
+
+INSERT INTO PRODUCT values(52,"gorgeous watch",980000,"52_thumbNail","52_image1","52_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",13);
+INSERT INTO PRODUCT values(53,"nice watch",1580000,"53_thumbNail","53_image1","53_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",13);
+
+INSERT INTO PRODUCT values(54,"gorgeous watch",980000,"54_thumbNail","54_image1","54_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",14);
+INSERT INTO PRODUCT values(55,"nice watch",1580000,"55_thumbNail","55_image1","55_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",14);
+
+INSERT INTO PRODUCT values(56,"gorgeous hourglass",980000,"56_thumbNail","56_image1","56_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",15);
+INSERT INTO PRODUCT values(57,"nice clock",1580000,"57_thumbNail","57_image1","57_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",15);
+
+
+INSERT INTO PRODUCT values(58,"nice perfume",250000,"58_thumbNail","58_image1","58_image2","y","y","50ml",110,200,"천연 원료들의 향을 재해석한 독특한 향수",16);
+INSERT INTO PRODUCT values(59,"gorgeous perfume",350000,"59_thumbNail","59_image1","59_image2","y","y","50ml",110,200,"천연 원료들의 향을 재해석한 독특한 향수",16);
+
+INSERT INTO PRODUCT values(60,"nice candle",300000,"60_thumbNail","60_image1","60_image2","y","y","one",11,20,"천연 원료들의 향을 재해석한 독특한 향초",17);
+INSERT INTO PRODUCT values(61,"gorgeous candle",350000,"61_thumbNail","61_image1","61_image2","y","y","one",11,20,"천연 원료들의 향을 재해석한 독특한 향초",17);
+
+INSERT INTO PRODUCT values(62,"gorgeous pearls",300000,"62_thumbNail","62_image1","63_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",18);
+INSERT INTO PRODUCT values(63,"gorgeous gemstone",150000,"63_thumbNail","63_image1","63_image2","y","n","one",11,20,"우아하고 세련된 디자인,팔에 부드럽게 달라붙는 착용감과 함께 어떤 스타일에도 잘 어울리는 제품",18);
+
+/*회원*/
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test01', '한지성', 'pw01', '010-1111-1111', '02-111-1111', '11111','인천광역시 남동구 서창동','00아파트', 'Y', 'Y', 'test01@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test02', '이용복', 'pw02', '010-2222-2222', '02-222-2222', '11111','서울특별시 강동구 성내동','00아파트', 'Y', 'N', 'test02@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test03', '황현진', 'pw03', '010-3333-3333', '02-333-3333', '11111','서울특별시 강동구 성내동','00아파트', 'Y', 'Y', 'test03@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test04', '김승민', 'pw04', '010-4444-4444', '02-444-4444', '11111','서울특별시 강남구 삼성동','00아파트', 'N', 'N', 'test04@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test05','양정인', 'pw05', '010-5555-5555', '02-555-5555', '11111','부산광역시 동구 수정동','00아파트', 'Y', 'N', 'test05@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test06', '서창빈', 'pw06', '010-6666-6666', '02-666-6666', '11111','경기도 용인시 기흥구 보라동','00아파트', 'Y', 'N', 'test06@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test07', '이민호', 'pw07', '010-7777-7777', '02-777-7777', '11111','경기도 김포시 대곶면','00아파트', 'Y', 'Y', 'test07@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test08', '크리스토퍼', 'pw08', '010-8888-8888', '02-888-8888', '11111','서울특별시 강동구 성내동','00아파트', 'Y', 'Y', 'test08@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test09', '박진영', 'pw09', '010-9999-9999', '02-999-9999', '11111','서울특별시 강동구 성내동','00아파트', 'N', 'N', 'test09@gmail.com', now());
+INSERT INTO USER (user_id, user_name, user_pwd, user_mobile, user_phone, user_addr1, user_addr2, user_addr3, user_emailWhether, user_snsWhether, user_email, user_regdate) values('test10', '김우진', 'pw10', '010-1010-1010', '02-101-1010', '11111','서울특별시 강동구 성내동','00아파트', 'Y', 'N', 'test10@gmail.com', now());
+INSERT INTO USER values('ADMIN', '김행운', 'pass', '010-8877-8888', '02-888-8888', '11111','서울특별시 강동구 성내동','00아파트', 'Y', 'N', 'admin@gmail.com', now(), 'ADMIN','BASIC');
+
+
+
+
+/*공지사항*/
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (1,"200ok와 함께할 모델을 찾습니다","많은 관심과 지원 부탁드립니다",now(),1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (2,"개인정보 처리방침 변경 안내","공고일자 : 2023년 2월 7일 시행일자 : 2023년 2월 15일
+",now(),1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (3,"상품별 사이즈 측정 안내","각 사이트 참고",now(),1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (4,"현금 영수증 신청 방법 안내","취소 시 현금영수증 금액도 취소 됩니다.",now(),1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (5,"사칭 피해 주의를 당부 드립니다.","최근 해외에서 쇼핑몰을 사칭해 모델 모집을 하는등의 사칭 피해 사건이 접수 되었습니다. 이와 같은 상황이 또 발생할 경우 법적 대응 하겠습니다, 감사합니다.",now(),1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (6,"200ok 배송비 변경 안내","택배 운임비 인상으로 인해 배송비가 인상됩니다 (2500-> 3000)",230123,1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (7,"교환/ 반품 공지사항","교환 반품 배송비 3000원",now(),1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (8,"설 연휴 스케쥴 안내","마지막 출고일은 1월 20일 금요일 입니다 감사합니다.",now(),1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (9,"거래처 여름 휴무 안내","8월15일 일시적으로 소진된 제품은 순차 발송 됩니다",20220815,1,"ADMIN");
+INSERT INTO NOTICE (notice_no,notice_title,notice_content,notice_regdate,notice_category,user_id) values (10,"삼일절 휴무 안내","법정 공휴일로 3월 2일 모든 업무가 재개 됩니다",20230225,1,"ADMIN");
+
+/*장바구니*/
+INSERT INTO CART values(1, 1, 1, 'test01');
+INSERT INTO CART values(2, 2,  3, 'test02');
+INSERT INTO CART values(3, 1,  6, 'test03');
+INSERT INTO CART values(4, 2, 5,'test04');
+INSERT INTO CART values(5, 10,  4, 'test05');
+INSERT INTO CART values(6, 20,  6, 'test06');
+INSERT INTO CART values(7, 1, 3, 'test07');
+INSERT INTO CART values(8, 2,  2, 'test08');
+INSERT INTO CART values(9, 1,  1, 'test09');
+INSERT INTO CART values(10, 1,  6, 'test10');
+INSERT INTO CART values(11, 3, 7, 'test01');
+
+
+/*찜하기*/
+INSERT INTO LIKES values (1,1,'test01');
+INSERT INTO LIKES values (2,2,'test01');
+INSERT INTO LIKES values (3,2,'test02');
+INSERT INTO LIKES values (4,3,'test02');
+INSERT INTO LIKES values (5,20,'test02');
+INSERT INTO LIKES values (6,11,'test04');
+INSERT INTO LIKES values (7,12,'test03');
+INSERT INTO LIKES values (8,13,'test01');
+INSERT INTO LIKES values (9,15,'test03');
+INSERT INTO LIKES values (10,1,'test07');
+
+/*상품 문의*/
+INSERT INTO PRODUCTQUESTION values (1, "상품 문의 드립니다:)" , "남자한테도 맞나요?" ,20230311,1,"test01",1);
+INSERT INTO PRODUCTQUESTION values (2,"상품 문의 드립니다:)","남자는 L사이즈 시키면 되나요?",20230311,1,"test02",2);
+INSERT INTO PRODUCTQUESTION values (3,"상품 문의 드립니다:)","순금 인가요?",20230311,1,"test03",1);
+INSERT INTO PRODUCTQUESTION values (4,"상품 문의 드립니다:)","팔둘레 두꺼운 사람도 어울릴 까요?",20230311,1,"test04",13);
+INSERT INTO PRODUCTQUESTION values (5,"상품 문의 드립니다:)","사이즈 작게 나온 편인가요?",20230311,1,"test05",13);
+INSERT INTO PRODUCTQUESTION values (6,"상품 문의 드립니다:)","여름에 어울리는 향기 인가요?",20230311,1,"test06",20);
+INSERT INTO PRODUCTQUESTION values (7,"상품 문의 드립니다:)","유통기한 있나요?",20230311,1,"test07",19);
+INSERT INTO PRODUCTQUESTION values (8,"상품 문의 드립니다:)","알러지 안생기나요?",20230311,1,"test08",13);
+INSERT INTO PRODUCTQUESTION values (9,"상품 문의 드립니다:)","몇번 정도 사용 가능한가요?",20230311,1,"test09",19);
+INSERT INTO PRODUCTQUESTION values (10,"상품 문의 드립니다:)","남자한테도 어울리나요",20230311,1,"test10",11);
+
+
+/*상품문의 답변*/
+INSERT INTO PRODUCTANSWER values (1,"네 착용 가능 하십니다 사이즈표 참고 부탁드립니다.",20230311,"ADMIN",1);
+INSERT INTO PRODUCTANSWER values (2,"사이즈표 참고 부탁드립니다.",20230311,"ADMIN",2);
+INSERT INTO PRODUCTANSWER values (3,"네 순금입니다 감사합니다",20230311,"ADMIN",3);
+INSERT INTO PRODUCTANSWER values (4,"네 모든 유형에 어울리도록 제작되었습니다 감사합니다.",20230311,"ADMIN",4);
+INSERT INTO PRODUCTANSWER values (5,"평균 사이즈로 제작되었습니다 사이즈표 참고 부탁드립니다.",20230311,"ADMIN",5);
+INSERT INTO PRODUCTANSWER values (6,"어느 계절에도 무난하게 사용 가능 하십니다 감사합니다.",20230311,"ADMIN",6);
+INSERT INTO PRODUCTANSWER values (7,"네 상품 하단 참조 부탁드립니다.",20230311,"ADMIN",7);
+INSERT INTO PRODUCTANSWER values (8,"네 알러지 생기지 않는 제품입니다.",20230311,"ADMIN",8);
+INSERT INTO PRODUCTANSWER values (9,"평균 20회 정도 사용 가능합니다 감사합니다.",20230311,"ADMIN",9);
+INSERT INTO PRODUCTANSWER values (10,"네 유니섹스 제품으로 남녀 모두 착용 가능합니다 감사합니다.",20230311,"ADMIN",10);
+
+/*문의*/
+INSERT INTO QUESTION values (1,"배송 문의 드립니다:)","언제 출발해요 일주일 넘게 가달렸어요",20230311,"배송문의","test01");
+INSERT INTO QUESTION values (2,"기타 문의 드립니다:)","사이즈 재는법 알려줘요",20230311,"기타문의","test02");
+INSERT INTO QUESTION values (3,"교환/반품 문의 드립니다:)","주문번호 : 22546 반품 신청합니다.",20230311,"교환/반품문의","test03");
+INSERT INTO QUESTION values (4,"배송 문의 드립니다:)","언제 출발해요?!",20230311,"배송문의","test04");
+INSERT INTO QUESTION values (5,"배송 문의 드립니다:)","이주일 넘게 가달렸어요",20230311,"배송문의","test05");
+INSERT INTO QUESTION values (6,"교환/반품 문의 드립니다:)","주문번호 : 22631 사이즈 M으로 교환 신청합니다",20230311,"교환/반품문의","test06");
+INSERT INTO QUESTION values (7,"배송 문의 드립니다:)","언제 출고",20230311,"배송문의","test07");
+INSERT INTO QUESTION values (8,"배송 문의 드립니다:)","언제 출발해요?? 소비자원에 신고하기전에 보내세요",20230311,"배송문의","test08");
+INSERT INTO QUESTION values (9,"교환/반품 문의 드립니다:)","주문번호 : 22222 기다리다 지쳐 반품 신청이요ㅋ ",20230311,"배송문의","test09");
+INSERT INTO QUESTION values (10,"배송 문의 드립니다:)","언제 출고 되나요",20230311,"배송문의","test10");
+
+/*문의 답변*/
+INSERT INTO ANSWER values (1,"내일 출고 됩니다 감사합니다",20230311,1);
+INSERT INTO ANSWER values (2,"공지 참고 부탁드립니다 감사합니다",20230311,2);
+INSERT INTO ANSWER values (3,"네 접수 완료되었습니다 감사합니다",20230311,3);
+INSERT INTO ANSWER values (4,"내일 출고됩니다 감사합니다",20230311,4);
+INSERT INTO ANSWER values (5,"내일 출고 됩니다 감사합니다",20230311,5);
+INSERT INTO ANSWER values (6,"네 접수 되었습니다 감사합니다",20230311,6);
+INSERT INTO ANSWER values (7,"내일 출고 됩니다 감사합니다",20230311,7);
+INSERT INTO ANSWER values (8,"내일 출고 됩니다 감사합니다",20230311,8);
+INSERT INTO ANSWER values (9,"네 접수 되었습니다 감사합니다",20230311,9);
+INSERT INTO ANSWER values (10,"내일 출고 됩니다 감사합니다",20230311,10);
+
+
+
+
+
+/*배송*/
+INSERT INTO DELIVERY values(1, '한지성','010-111-111','11111','서울특별시 강남구 압구정동', '123호','Y', '부재시 경비실에 맡겨주세요','test01');
+INSERT INTO DELIVERY values(2, '이용복','010-222-222','11111', '서울특별시 동작구 대방동', '123호','Y', '부재시 문자 남겨주세요','test02');
+INSERT INTO DELIVERY 
+VALUES (3, '황현진', '010-333-3333', '11111', '서울특별시 마포구 합정동', '123호', 'Y', '부재시 문자 남겨주세요', 'test03');
+INSERT INTO  DELIVERY values(4, '이용복','010-333-3333','11111','대구광역시 달서구 본리동', '123호','N','배송 전에 미리 연락 바랍니다','test03');
+INSERT INTO DELIVERY 
+VALUES (5, '한지성', '010-333-3333', '11111', '부산광역시 금정구 구서동', '123호', 'Y', '부재시 경비실에 맡겨주세요', 'test04');
+INSERT INTO DELIVERY (delivery_Id, delivery_name, delivery_mobile, delivery_add1, delivery_add2, delivery_add3, delivery_basicYn, delivery_memo, user_id) 
+VALUES (6, '크리스토퍼', '010-333-3333', '11111', '서울특별시 서초구 서초동', '123호', 'Y', '배송전에 미리 연락 바랍니다', 'test05');
+INSERT INTO DELIVERY (delivery_Id, delivery_name, delivery_mobile, delivery_add1, delivery_add2, delivery_add3, delivery_basicYn, delivery_memo, user_id) 
+VALUES (7, '김우진', '010-333-3333', '11111', '인천광역시 부평구 삼산동', '123호', 'Y', '부재시 문자 남겨주세요', 'test06');
+INSERT INTO DELIVERY (delivery_Id, delivery_name, delivery_mobile, delivery_add1, delivery_add2, delivery_add3, delivery_basicYn, delivery_memo, user_id) 
+VALUES (8, '박진영', '010-333-3333', '11111', '서울특별시 강동구 상일동', '123호', 'Y', '부재시 문자 남겨주세요', 'test07');
+INSERT INTO DELIVERY (delivery_Id, delivery_name, delivery_mobile, delivery_add1, delivery_add2, delivery_add3, delivery_basicYn, delivery_memo, user_id) 
+VALUES (9, '한지성', '010-333-3333', '11111', '제주특별자치도 제주시 추자면', '123호', 'N', '배송전에 미리 연락 바랍니다', 'test01');
+INSERT INTO DELIVERY (delivery_Id, delivery_name, delivery_mobile, delivery_add1, delivery_add2, delivery_add3, delivery_basicYn, delivery_memo, user_id) 
+VALUES (10, '한지성', '010-333-3333', '11111', '경기도 광명시 하안동', '123호', 'N', '부재시 문자 남겨주세요', 'test02');
+
+
+
+
+/*주문*/
+INSERT INTO ORDERS values(1, 'test01', now(), 500000, '통합결제','결제완료','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+INSERT INTO ORDERS values(2, 'test02', now(), 800000, '무통장입금', '입금전','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+INSERT INTO ORDERS values(3, 'test03', now(), 350000, '통합결제', '배송중','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+INSERT INTO ORDERS values(4, 'test04', now(), 540000, '통합결제', '배송완료','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+INSERT INTO ORDERS values(5, 'test06', now(), 300000, '통합결제', '결제완료','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+INSERT INTO ORDERS values(6, 'test07', now(), 250000, '무통장입금', '입금전','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+INSERT INTO ORDERS values(7, 'test08', now(), 290000, '무통장입금', '상품준비중','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+INSERT INTO ORDERS values(8, 'test09', now(), 56000, '통합결제', '결제완료','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+INSERT INTO ORDERS values(9, 'test10', now(), 34000, '통합결제', '배송완료','한지성','010-1111-1111','11111','서울특별시 강동대로205','센터','부재시 문자 남겨주세요');
+
+
+/*주문아이템*/
+INSERT INTO ORDERITEM values(1, 5,1,1);
+INSERT INTO ORDERITEM values(2, 2,2,1);
+INSERT INTO ORDERITEM values(3, 3,2,2);
+INSERT INTO ORDERITEM values(4, 1,1,2);
+INSERT INTO ORDERITEM values(5, 2,4,3);
+INSERT INTO ORDERITEM values(6, 5,5,4);
+INSERT INTO ORDERITEM values(7, 4,8,5);
+INSERT INTO ORDERITEM values(8, 1,9,6);
+INSERT INTO ORDERITEM values(9, 1,6,7);
+INSERT INTO ORDERITEM values(10, 1,5,7);
+
+/*리뷰*/
+INSERT INTO REVIEW values(1, 1,'test01', 1, '너무 예뻐요', '★★★★★',now(),'review1_image1','review1_image2','review1_image3');
+INSERT INTO REVIEW values(2, 2,'test02',2, '너무 마음에 들어요','★★★★★',now(),'review2_image1','review2_image2','review2_image3');
+INSERT INTO REVIEW values(3, 3,'test03',3, '애인선물로 구매했습니다','★★★★★',now(),'review3_image1','review3_image2','review3_image3');
+INSERT INTO REVIEW values(4, 4,'test04',4, '나에게 주는 선물로 샀는데 예뻐요','★★★★★' ,now(),'review4_image1','review4_image2','review4_image3');
+INSERT INTO REVIEW values(5, 5,'test05',5, '마음에 들어요','★★★★★' ,now(),'review5_image1','review5_image2','review5_image3');
+INSERT INTO REVIEW values(6, 6,'test06',6, '상품상태가 좋아요','★★★★★' ,now(),'review6_image1','review6_image2','review6_image3');
+INSERT INTO REVIEW values(7, 7,'test07',7, '배송이 빨라요','★★★★★',now(),'review7_image1','review7_image2','review7_image3');
+INSERT INTO REVIEW values(8, 8,'test08',8, '잘 착용하겠습니다','★★★★★',now(),'review8_image1','review8_image2','review8_image3');
+INSERT INTO REVIEW values(9, 9,'test09',9, '마음에 들어요','★★★★★' ,now(),'review9_image1','review9_image2','review9_image3');
+
+
+

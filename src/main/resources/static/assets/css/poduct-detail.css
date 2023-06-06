@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+body {    
+font-family: 'Nanum Gothic', sans-serif;
+font-size: 0.8rem; 
+line-height: 1.5rem;   
+color: #000;
+
+} 
+h1 {  
+font-size: 2.5rem;   
+line-height: 1.0rem;  
+letter-spacing:-0.05em;
+color: #666;
+font-family: 'Lato', sans-serif;     
+text-transform: uppercase;
+  display: inline;}
+h2 {
+  font-family: 'Lato', sans-serif;
+font-size: 2.5rem;   
+line-height: 1.0rem;  
+color: #666;
+}
+h3 {
+  font-family: 'Lato', sans-serif;
+font-size: 1.5rem;   
+line-height: 1.0rem;  
+color: #666;   
+text-transform: uppercase;
+}
+h4 {  
+font-size: 1.2rem;   
+line-height: 1.2rem;  
+color: #666;
+margin-top:10px;
+}
+h5 {  
+font-size: 1rem;   
+line-height: 1.3rem;  
+color: #666;
+  margin:10px;
+}
+small{ 
+font-size: 0.7rem;   
+line-height: 1.0rem;  
+color: #aaa;
+}
+
+a{color:#666; text-decoration:none;} 
+a:visited {color:#666;}
+
+.f-list li a{color:#999; text-decoration:none;} 
+.f-list li a:visited {color:#999;}
+.f-list li a:hover{color:#000;}
+
+.lin a{color:#666; text-decoration:none;} 
+.lin a:visited {color:#666;}
+.lin a:hover{color:#000;}
+
+.d-button a{color:#ffff; text-decoration:none;} 
+.d-button a:visited {color:#fff;}
+.d-button a:hover{color:#000;}
+
+.container a{color:#000; text-decoration:none;}
+.container a:visited {color:#000;}
+
+/*default*/
+
+body {
+background-color: #fff;
+margin: 0; 
+padding: 0;
+}
+
+ul li {
+list-style: none;/*텍스트가로정렬*/
+display: inline;
+}
+
+img {
+vertical-align: middle;
+}
+
+.d-box{
+  margin: 0; 
+padding: 0;
+  width:100%;
+  clear: both;
+  position: relative;
+  background-color: none;
+}
+
+.d-box:after{
+  content: '';
+  display: block;
+  clear: both;
+  visibility: hidden;}
+  
+.dd-box{
+    padding: 0;
+  width:1200px;
+  clear: both;
+  position: relative;
+  margin: 0 auto;
+  background-color: none;
+}
+
+.dd-box:after{
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;}
+
+.d-button {
+padding: 10px 40px;
+margin: 10px 0px;
+display: inline-block;
+   background-color:#43BEBF;
+}
+.dd-button {
+padding: 5px 30px;
+margin: 10px 0px;
+display: inline-block;
+  border:1px solid #aaa;
+  float:right;
+}
+.f-button {
+padding: 7px 20px;
+display: inline-block;
+  border:1px solid #888;
+  margin-top:10px;
+}
+
+.fx{
+			position:fixed;
+		  bottom:330px;
+			right:20px;
+			width:50px;
+			height:150px;
+			background-color:none;
+      clear:both;
+       z-index:1;
+		}
+hr
+{border: solid 2px #666;}
+/*선종류 선굵기 선색상*/
+
+/*title*/
+.titl{
+  width:95%;
+  min-width:1000px;
+  display:inline-block;
+  background-color:#fff;
+  margin:20px 2.5%;
+}
+.f-list li{
+  font-size:1rem;
+  float:left;
+  padding:5px 15px;
+}
+.s-list li{
+  font-size:0.7rem;
+  float:right;
+  padding:5px 10px;
+}
+.story{
+  position: absolute;
+  left:100px;
+  bottom:50px;
+}
+.story-l{
+  margin-left:50px;
+}
+.lin{
+  display: inline-block;
+  float:left;
+  padding:5px;
+}
+
+.f-list{
+  font-family: 'Lato', sans-serif;
+}
+
+/*메뉴바*/
+.list-f{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:125px;
+width:100px;
+}
+.list-s{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:220px;
+width:120px;
+}
+.list-t{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:405px;
+width:100px;
+}
+.f-list li:hover ul {
+display:block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}
+
+
+
+/*section1*/
+
+.best{
+  font-family: 'Dancing Script', cursive;
+  font-size:1.5rem;
+  color:#43BEBF;
+}
+
+.fs-f{
+  width:630px;
+  margin-bottom:70px;
+  float:left;
+}
+.fs-s{
+  width:530px;
+  float:right;
+  margin-top:10px;
+}
+.fs-t{
+  width:1000px;
+  float:right;
+}
+
+/*section2*/
+.rev{
+  display:inline-block;
+  width:900px;
+}
+.text{
+  margin-top:100px;
+  width:400px;
+  float:left;
+}
+.mat{
+  width:200px;
+  margin:10px;
+  float:left;
+}
+.revw{
+  float:right;
+  margin-top:180px;
+  width:270px;
+}
+/*section3*/
+.tri{
+  width:550px;
+  float:left;
+  margin:25px;
+}
+.tex{
+  width:170px;
+  position:absolute;
+  top:40px;
+}
+.im{
+  margin-left:100px;
+}
+/*footer1*/
+.container{
+display:flex;
+}
+.container hr {border: solid 0.5px #bbb;}
+
+.container div{
+  margin:20px;
+}
+.con1{
+  width:250px;
+}
+.con2{
+  width:250px;
+}
+.con3{
+  width:110px;
+}
+.con4{
+  width:500px;
+}
+/*footer2*/
+.foo{
+  display:inline;
+}
+.foo-i{
+float:left;
+ padding:15px 10px;
+}
+.foo-ic{
+  float:right;
+  padding:15px 10px;
+}
+ /*-----------------------------------------------------*/
+ 
+ ul,li,body,h1,h2,h3,h4,h5,h6{margin: 0; padding: 0;}
+	ul li{list-style: none;}
+	a{text-decoration: none;}
+	*{font-family: "NanumBarunGothic";}
+
+	.shCMSshop{margin: 0;	padding: 60px 0 0 0;	width: 1200px; margin: 0 auto;}
+	.shCMSshop .shopView .viewHeader:after{display: block; content: ''; clear: both;}
+	.shCMSshop .shopView .viewHeader .productImg{float: left; }
+	.shCMSshop .shopView .viewHeader .productImg .mainImg{width: 500px; height:500px; background: #000;}
+	.shCMSshop .shopView .viewHeader .productImg ul{margin-top: 35px;}
+	.shCMSshop .shopView .viewHeader .productImg ul li{width: 85px; height:85px; background: #000; display: inline-block;margin-right: 25px; border:1px solid #ccc; cursor: pointer;}
+	.shCMSshop .shopView .viewHeader .productImg ul li:first-child{margin-left: 30px;}
+
+	.shCMSshop .shopView .viewHeader .productInfo{margin-left: 50px; width: 650px; float:left;}
+	.shCMSshop .shopView .viewHeader .productInfo h3{font-size: 23px;margin-bottom: 63px;}
+	.shCMSshop .shopView .viewHeader .productInfo .price{border-bottom: 1px solid #e6e6e6;padding-bottom: 16px;}
+	.shCMSshop .shopView .viewHeader .productInfo .price:after{display: block; content:''; clear: both;}
+	.shCMSshop .shopView .viewHeader .productInfo .sale{font-size: 45px; font-family:"Arial"; color:rgb(255, 255, 255); font-weight: bold; float: left;}
+	.shCMSshop .shopView .viewHeader .productInfo .sale span{font-size: 25px;}
+	.shCMSshop .shopView .viewHeader .productInfo .cost-price{float: left; margin: 5px 0 0 20px; font-size: 15px; color: rgb(255, 255, 255); text-decoration: line-through;}
+	.shCMSshop .shopView .viewHeader .productInfo .sale-price{float: left; margin: 15px 0 0 -55px; font-family: "Tahoma"; font-weight: bold; font-size: 25px;}
+
+	.shCMSshop .shopView .viewHeader .productInfo .price~.manufact, .categori, .origin{padding: 16px 0 16px 10px; border-bottom: 1px solid #e6e6e6; font-size: 18px; white-space: pre;}
+	.shCMSshop .shopView .viewHeader .productInfo .price~.manufact span, .categori span, .origin span{color:#6a6a6a;}
+	.shCMSshop .shopView .viewHeader .productInfo .items{padding: 16px 0;}
+	.shCMSshop .shopView .viewHeader .productInfo .items select{width: 630px; height: 40px; margin: 0 auto; display: block; border: 1px solid #cdcdcd;}
+	.shCMSshop .shopView .viewHeader .productInfo .item{padding: 16px 0 16px 10px; border-bottom: 1px solid #e6e6e6; position: relative;}
+	.shCMSshop .shopView .viewHeader .productInfo .item:after{display: block;content: '';clear: both;}
+	.shCMSshop .shopView .viewHeader .productInfo .item a{width: 25px; height:25px; background: #f8f8f8; border: 1px solid #d8d8d8;box-sizing: border-box; display: inline-block;}
+	.shCMSshop .shopView .viewHeader .productInfo .item .item-name{font-size: 16px; font-weight: 300;}
+	.shCMSshop .shopView .viewHeader .productInfo .item .item-name+span{display: inline-flex; margin-left: 40%;}
+	.shCMSshop .shopView .viewHeader .productInfo .item .item-name+span a{padding-top: 2px; text-align: center;}
+	.shCMSshop .shopView .viewHeader .productInfo input[type="number"]{margin: 0 -1px;padding-top: 4px;width: 40px; border:1px solid #d8d8d8;text-align: right;}
+	.shCMSshop .shopView .viewHeader .productInfo .item-price{font-family: "Tahoma"; font-weight: bold; font-size: 18px; margin-left: 5%;}
+	.shCMSshop .shopView .viewHeader .productInfo .item-price+a{float:right; text-align: center; width: 18px; height: 18px; margin: 5px 10px 0 0; font-weight: bold; padding-bottom: 18px;}
+	.shCMSshop .shopView .viewHeader .productInfo .all-price{margin-top: 55px; text-align: right; white-space: pre; font-size: 18px;}
+	.shCMSshop .shopView .viewHeader .productInfo .all-price span{font-family: "Tahoma"; font-size: 25px; font-weight: bold; color: #000000;}
+	.shCMSshop .shopView .viewHeader .productInfo .btn{text-align: right;margin-top: 40px;}
+	.shCMSshop .shopView .viewHeader .productInfo .btn a{padding: 15px 56px;font-size: 22px; display: inline-block;}
+	.shCMSshop .shopView .viewHeader .productInfo .btn a:first-child{color: black; border: 1px solid black; box-sizing: border-box;}
+	.shCMSshop .shopView .viewHeader .productInfo .btn a:last-child{background: #000000; color: white; font-size: 22px;margin-left: 26px; border:1px solid #000000;}
+
+	.shCMSshop .shopView .viewBody{margin-top: 100px;}
+	.shCMSshop .shopView .viewBody .contentNav:after{display: block;content:'';clear: both;}
+	.shCMSshop .shopView .viewBody .contentNav li{width: 25%; float: left; background: #f2f2f2; border: 1px solid #282e32; box-sizing: border-box; text-align: center;margin-right: -1px;font-size: 18px;}
+	.shCMSshop .shopView .viewBody .contentNav a{display: block; padding:20px 0;}
+	.shCMSshop .shopView .viewBody .contentNav a span{font-size: 15px;}
+	.shCMSshop .shopView .viewBody .contentNav a span .count{font-size: 15px;}
+	.shCMSshop .shopView .viewBody .contentNav li.active{background: #282e32;}
+	.shCMSshop .shopView .viewBody .contentNav li.active a{color: white;}
+
+	/*테이블 기본 셋팅*/
+	.shCMSshop .shopView .viewBody table{border-top: 1px solid #afafaf; border-bottom: 1px solid #d4d4d4; width: 100%; margin: 60px 0 40px 0; border-collapse: collapse; border-spacing: 0;font-size: 14px;}
+	.shCMSshop .shopView .viewBody thead>tr{height:40px;background: #f2f2f2;text-align: center;}
+	.shCMSshop .shopView .viewBody table tr{border-top:1px solid #d4d4d4;}
+	.shCMSshop .shopView .viewBody table tr:first-child{border-top: none;}
+	.shCMSshop .shopView .viewBody table .tcontent{text-align: left;}
+	.shCMSshop .shopView .viewBody table .tcontent:hover{cursor: pointer;}
+	.shCMSshop .shopView .viewBody table .tcontent:hover span{text-decoration: underline;}
+	.shCMSshop .shopView .viewBody table .tcontent span{white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 225px; display: inline-block;}
+	/*상품 정보*/
+	.shCMSshop .shopView .viewBody .tproduct-info tr:first-child{border-top:2px solid #5d5d5d;}
+	.shCMSshop .shopView .viewBody .tproduct-info tr td{padding: 0 13px; line-height: 20px;}
+	.shCMSshop .shopView .viewBody .tproduct-info tr td:first-child{background: #f2f2f2; height: 50px; padding-left: 20px; width: 16.5%;}
+	.shCMSshop .shopView .viewBody .tproduct-info tr td:nth-child(3){background: #f2f2f2; width: 16.5%; padding-left: 20px;}
+	/*상품 후기*/
+	.shCMSshop .shopView .viewBody .tproduct-review thead>tr>td:first-child{width: 130px; background: #f2f2f2; height: 40px;text-align: center;}
+	.shCMSshop .shopView .viewBody .tproduct-review thead>tr>td:nth-child(3){width: 140px;}
+	.shCMSshop .shopView .viewBody .tproduct-review thead>tr>td:last-child{width: 145px;text-align: center;}
+	.shCMSshop .shopView .viewBody .tproduct-review tr{height: 50px; text-align: center;}
+	/*상품 후기 더보기*/
+	.shCMSshop .shopView .viewBody .tproduct-review .detail-content{display: none;}
+	.shCMSshop .shopView .viewBody .tproduct-review .detail-content td:first-child{width: 130px;}
+	.display{display:table-row!important;border-top:none!important;}
+	.overflow{overflow:inherit!important;}
+	.text{width: 207px!important; text-overflow: unset!important;}
+	/*Q & A 테이블 감싸기 - 문의하기 버튼 넣기 용도*/
+	.shCMSshop .shopView .viewBody .tquestion{position: relative;}
+	.shCMSshop .shopView .viewBody .tquestion a{position: absolute; right: 0; top: -40px; padding:8px 12px; background: #666; color:white; font-size: 14px;}
+	/*Q & A*/
+	.shCMSshop .shopView .viewBody .tquestion thead>tr>td:first-child{width: 72px; background: #f2f2f2; height: 40px;text-align: center;}
+	.shCMSshop .shopView .viewBody .tquestion thead>tr>td:nth-child(3){width: 140px;}
+	.shCMSshop .shopView .viewBody .tquestion thead>tr>td:last-child{width: 145px;}
+	.shCMSshop .shopView .viewBody .tquestion tr{text-align: center;}
+	.shCMSshop .shopView .viewBody .tquestion tr{height: 40px;}
+	.shCMSshop .shopView .viewBody .tquestion tr:first-child~tr td:nth-child(2){width: 95px;}
+	.shCMSshop .shopView .viewBody .tquestion td.answer-no{color: #e63740;}
+	.shCMSshop .shopView .viewBody .tquestion td.answer-ok{color: #3c43c7;}
+
+	/*jquery용 테이블 셋팅*/
+	.shCMSshop .shopView .viewBody table{display: none;}
+	.shCMSshop .shopView .viewBody table.active{display: table;}
+	
+	li.active1 {
+  width: 80%;
+}
+
+/*img{
+  width: 250px;
+  height: 370px;
+  display:inline-block;
+}*/
+
+.subImg img {
+    width: 85px; /* 원하는 가로 크기(px)로 조정 */
+    height: 85px; /* 세로 크기는 가로 크기에 맞게 자동 조정 */
+}
+
+.mainImg img {
+    width: 500px; /* 원하는 가로 크기(px)로 조정 */
+    height: 500px; /* 세로 크기는 가로 크기에 맞게 자동 조정 */
+}
+
+.contentImg img{
+	width: 1000px; /* 원하는 가로 크기(px)로 조정 */
+    height: 500px; /* 세로 크기는 가로 크기에 맞게 자동 조정 */
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link th:href="@{/assets/css/admin-home.css}" rel="stylesheet"
+	type="text/css" />
+<style type="text/css"></style>
+<script type="text/javascript"
+	src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+	<div class="area"></div>
+	<nav class="main-menu">
+
+		<ul>
+			<li><br> <a href="https://jbfarrow.com"> <i
+					class="fa fa-home fa-2x"></i> <span class="nav-text"> 홈으로 이동
+				</span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/usermanageform}">
+					<i class="fa fa-comments fa-2x"></i> <span class="nav-text">
+						회원 관리 </span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/productmanageform}">
+					<i class="fa fa-camera-retro fa-2x"></i> <span class="nav-text">
+						상품 관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/ordermanageform}"> <i
+					class="fa fa-book fa-2x"></i> <span class="nav-text"> 주문관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/moveMain}"> <i
+					class="fa fa-map-marker fa-2x"></i> <span class="nav-text">
+						쇼핑몰 메인으로 이동 </span>
+			</a></li>
+
+
+			<ul class="logout">
+				<li><a th:href="@{/admin/logout}"> <i
+						class="fa fa-power-off fa-2x"></i> <span class="nav-text">
+							Logout </span>
+				</a></li>
+			</ul>
+		</ul>
+	</nav>
+
+<h1 style="margin-left: 100px; font-size: 55px;color: #585858;">HOME</h1>
+	<!-- content -->
+	<br>
+<div style="display:flex;">
+    <div id="piechart" style="width: 700px; height: 300px;"></div>
+    <div id="worstpiechart" style="width: 700px; height: 300px;"></div>
+</div>
+ <hr>
+ <div style="display: flex;">
+ <div style="display: inline-block; margin-left: 100px;">
+    <h4>재고 10개 이하 남은 상품</h4>
+    <table class="table all_center type_check">
+		<colgroup>
+			<col style="width: 50px;" />
+			<col style="width: 150px;" />
+			<col style="width: 100px;" />
+			<col style="width: 100px;" />
+			<col style="width: 100px;" />
+			<col style="width: 150px;" />
+		</colgroup>
+		<thead>
+			<tr>
+
+				<th class="align_left">상품번호</th>
+				<th>상품이름</th>
+				<th>썸네일</th>
+				<th>가격</th>
+				<th>재고</th>
+				<th>주문량</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="sale : ${sale}">
+
+				<td th:text="${sale.productCode}"></td>
+				<td th:text="${sale.productName}"></td>
+				<td><img th:src="@{/image/__${sale.productThumbnail}__.jpg}"
+					width="80px" height="30px"></td>
+				<td th:text="${sale.productPrice}"></td>
+				<td th:text="${sale.productStock}"></td>
+				<td th:text="${sale.productSale}"></td>
+				
+
+			</tr>
+		</tbody>
+	</table>
+	<br>
+</div>
+<div style="display: inline-block; ">
+    <h4>최근 주문</h4>
+    
+    <table class="table all_center type_check">
+		<colgroup>
+			<col style="width: 100px;" />
+			<col style="width: 500x;" />
+			<col style="width: 200px;" />
+			<col style="width: 300px;" />
+
+		</colgroup>
+		<thead>
+			<tr>
+
+				<th class="align_left">주문번호</th>
+				<th>주문날짜</th>
+				<th>유형</th>
+				<th>상태</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="orders : ${orders}">
+
+				<td th:text="${orders.orderCode}"></td>
+				<td th:text="${orders.orderRegdate}"></td>
+				<td th:text="${orders.orderPayment}"></td>
+				<td th:text="${orders.orderStatus}"></td>
+				
+			</tr>
+		</tbody>
+	</table>
+</div>
+ </div>
+    
+
+
+<script th:inline="javascript">
+
+var products = JSON.parse(/*[[${products}]]*/ '[]');
+console.log(products)
+var productData = [ ["Product", "Sale"] ].concat(products.map(function(p) {
+    var [product, sale] = p.split(",");
+    return [product, parseInt(sale)];
+}));
+
+console.log(productData)
+
+// Google Chart 로드 및 콜백 함수 등록
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Google Chart 생성 함수
+function drawChart() {
+    // 차트 옵션 설정
+    var options = {
+        title: '판매량 BEST5 상품'
+    };
+  
+    // 차트 생성
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(google.visualization.arrayToDataTable(productData), options);
+}
+
+var worstproducts = JSON.parse(/*[[${worstproducts}]]*/ '[]');
+console.log(worstproducts)
+var worstproductData = [ ["Product", "Sale"] ].concat(worstproducts.map(function(p) {
+    var [product, sale] = p.split(",");
+    return [product, parseInt(sale)];
+}));
+
+console.log(worstproductData)
+
+// Google Chart 로드 및 콜백 함수 등록
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart1);
+
+// Google Chart 생성 함수
+function drawChart1() {
+    // 차트 옵션 설정
+    var options = {
+        title: '판매량 WORST5 상품'
+    };
+  
+    // 차트 생성
+    var chart = new google.visualization.PieChart(document.getElementById('worstpiechart'));
+    chart.draw(google.visualization.arrayToDataTable(worstproductData), options);
+}
+
+</script>
+</body>
+</html>

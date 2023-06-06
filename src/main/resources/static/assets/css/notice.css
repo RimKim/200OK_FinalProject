@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+body {    
+font-family: 'Nanum Gothic', sans-serif;
+font-size: 0.8rem; 
+line-height: 1.5rem;   
+color: #000;
+
+} 
+h1 {  
+font-size: 2.5rem;   
+line-height: 1.0rem;  
+letter-spacing:-0.05em;
+color: #666;
+font-family: 'Lato', sans-serif;     
+text-transform: uppercase;
+  display: inline;}
+h2 {
+  font-family: 'Lato', sans-serif;
+font-size: 2.5rem;   
+line-height: 1.0rem;  
+color: #666;
+}
+h3 {
+  font-family: 'Lato', sans-serif;
+font-size: 1.5rem;   
+line-height: 1.0rem;  
+color: #666;   
+text-transform: uppercase;
+}
+h4 {  
+font-size: 1.2rem;   
+line-height: 1.2rem;  
+color: #666;
+margin-top:10px;
+}
+h5 {  
+font-size: 1rem;   
+line-height: 1.3rem;  
+color: #666;
+  margin:10px;
+}
+small{ 
+font-size: 0.7rem;   
+line-height: 1.0rem;  
+color: #aaa;
+}
+
+a{color:#666; text-decoration:none;} 
+a:visited {color:#666;}
+
+.f-list li a{color:#999; text-decoration:none;} 
+.f-list li a:visited {color:#999;}
+.f-list li a:hover{color:#000;}
+
+.lin a{color:#666; text-decoration:none;} 
+.lin a:visited {color:#666;}
+.lin a:hover{color:#000;}
+
+.d-button a{color:#ffff; text-decoration:none;} 
+.d-button a:visited {color:#fff;}
+.d-button a:hover{color:#000;}
+
+.container a{color:#000; text-decoration:none;}
+.container a:visited {color:#000;}
+
+/*default*/
+
+body {
+background-color: #fff;
+margin: 0; 
+padding: 0;
+}
+
+ul li {
+list-style: none;/*텍스트가로정렬*/
+display: inline;
+}
+
+img {
+vertical-align: middle;
+}
+
+.d-box{
+  margin: 0; 
+padding: 0;
+  width:100%;
+  clear: both;
+  position: relative;
+  background-color: none;
+}
+
+.d-box:after{
+  content: '';
+  display: block;
+  clear: both;
+  visibility: hidden;}
+  
+.dd-box{
+    padding: 0;
+  width:1200px;
+  clear: both;
+  position: relative;
+  margin: 0 auto;
+  background-color: none;
+}
+
+.dd-box:after{
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;}
+
+.d-button {
+padding: 10px 40px;
+margin: 10px 0px;
+display: inline-block;
+   background-color:#43BEBF;
+}
+.dd-button {
+padding: 5px 30px;
+margin: 10px 0px;
+display: inline-block;
+  border:1px solid #aaa;
+  float:right;
+}
+.f-button {
+padding: 7px 20px;
+display: inline-block;
+  border:1px solid #888;
+  margin-top:10px;
+}
+
+.fx{
+			position:fixed;
+		  bottom:330px;
+			right:20px;
+			width:50px;
+			height:150px;
+			background-color:none;
+      clear:both;
+       z-index:1;
+		}
+hr
+{border: solid 2px #666;}
+/*선종류 선굵기 선색상*/
+
+/*title*/
+.titl{
+  width:95%;
+  min-width:1000px;
+  display:inline-block;
+  background-color:#fff;
+  margin:20px 2.5%;
+}
+.f-list li{
+  font-size:1rem;
+  float:left;
+  padding:5px 15px;
+}
+.s-list li{
+  font-size:0.7rem;
+  float:right;
+  padding:5px 10px;
+}
+.story{
+  position: absolute;
+  left:100px;
+  bottom:50px;
+}
+.story-l{
+  margin-left:50px;
+}
+.lin{
+  display: inline-block;
+  float:left;
+  padding:5px;
+}
+
+.f-list{
+  font-family: 'Lato', sans-serif;
+}
+
+/*메뉴바*/
+.list-f{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:125px;
+width:100px;
+}
+.list-s{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:220px;
+width:120px;
+}
+.list-t{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:405px;
+width:100px;
+}
+.f-list li:hover ul {
+display:block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}
+
+
+
+/*section1*/
+
+.best{
+  font-family: 'Dancing Script', cursive;
+  font-size:1.5rem;
+  color:#43BEBF;
+}
+
+.fs-f{
+  width:630px;
+  margin-bottom:70px;
+  float:left;
+}
+.fs-s{
+  width:530px;
+  float:right;
+  margin-top:10px;
+}
+.fs-t{
+  width:1000px;
+  float:right;
+}
+
+/*section2*/
+.rev{
+  display:inline-block;
+  width:900px;
+}
+.text{
+  margin-top:100px;
+  width:400px;
+  float:left;
+}
+.mat{
+  width:200px;
+  margin:10px;
+  float:left;
+}
+.revw{
+  float:right;
+  margin-top:180px;
+  width:270px;
+}
+/*section3*/
+.tri{
+  width:550px;
+  float:left;
+  margin:25px;
+}
+.tex{
+  width:170px;
+  position:absolute;
+  top:40px;
+}
+.im{
+  margin-left:100px;
+}
+/*footer1*/
+.container{
+display:flex;
+}
+.container hr {border: solid 0.5px #bbb;}
+
+.container div{
+  margin:20px;
+}
+.con1{
+  width:250px;
+}
+.con2{
+  width:250px;
+}
+.con3{
+  width:110px;
+}
+.con4{
+  width:500px;
+}
+/*footer2*/
+.foo{
+  display:inline;
+}
+.foo-i{
+float:left;
+ padding:15px 10px;
+}
+.foo-ic{
+  float:right;
+  padding:15px 10px;
+}
+ /*-----------------------------------------------------*/
+ 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+section.notice {
+  padding: 80px 0;
+}
+
+.page-title {
+  margin-bottom: 60px;
+}
+.page-title h3 {
+  font-size: 28px;
+  color: #333333;
+  font-weight: 400;
+  text-align: center;
+}
+
+#board-search .search-window {
+  padding: 15px 0;
+  background-color: #f9f7f9;
+}
+#board-search .search-window .search-wrap {
+  position: relative;
+/*   padding-right: 124px; */
+  margin: 0 auto;
+  width: 80%;
+  max-width: 564px;
+}
+#board-search .search-window .search-wrap input {
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  padding: 7px 14px;
+  border: 1px solid #ccc;
+}
+#board-search .search-window .search-wrap input:focus {
+  border-color: #333;
+  outline: 0;
+  border-width: 1px;
+}
+#board-search .search-window .search-wrap .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 108px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.board-table {
+  font-size: 13px;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.board-table a {
+  color: #333;
+  display: inline-block;
+  line-height: 1.4;
+  word-break: break-all;
+  vertical-align: middle;
+}
+.board-table a:hover {
+  text-decoration: underline;
+}
+.board-table th {
+  text-align: center;
+}
+
+.board-table .th-num {
+  width: 100px;
+  text-align: center;
+}
+
+.board-table .th-date {
+  width: 200px;
+}
+
+.board-table th, .board-table td {
+  padding: 14px 0;
+}
+
+.board-table tbody td {
+  border-top: 1px solid #e7e7e7;
+  text-align: center;
+}
+
+.board-table tbody th {
+  padding-left: 28px;
+  padding-right: 14px;
+  border-top: 1px solid #e7e7e7;
+  text-align: left;
+}
+
+.board-table tbody th p{
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0 30px;
+  font-size: 15px;
+  font-weight: 400;
+  background: transparent;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+.btn-dark {
+  background: #555;
+  color: #fff;
+}
+
+.btn-dark:hover, .btn-dark:focus {
+  background: #373737;
+  border-color: #373737;
+  color: #fff;
+}
+
+/* reset */
+
+* {
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.container1 {
+  width: 1100px;
+  margin: 0 auto;
+}
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+
+.btn { 
+  background-color: black;
+  padding: 0.5rem 1.5rem;
+  border:0;
+  color: white;
+  cursor:pointer;
+  user-select: none;
+  font-weight: 200;
+  font-size: 0.7rem;
+}
+.btn.rounded{
+  border-radius: 2rem;
+}

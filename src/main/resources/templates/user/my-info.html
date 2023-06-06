@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorate="~{layout/layout}">
+<th:block layout:fragment="content">
+<head>
+<link rel="stylesheet" href="../assets/css/my-info.css" />
+<title>Insert title here</title>
+<style type="text/css"></style>
+</head>
+<body>
+	
+	
+	
+
+	<div align="center"><h2>My Page</h2></div>
+	
+<!-- Mypage -->
+		
+  <div class="greenContainer">
+    <div>
+      <!-- <div class="grade">GOLD</div> -->
+      <div th:text = "'👋   ' +${user.userName} + '님 환영 합니다!'" class="name"></div>
+    </div>    
+    
+  
+    
+    <div class="modify">
+    <button onclick="location.href='edituserform'">회원정보수정</button>
+    <button onclick="location.href='adresslist'">배송지관리</button> 
+     <div th:if="${userRole eq 'ADMIN'}">
+    <button onclick="location.href='/ok/admin/adminhome'">관리자 홈</button> 
+    </div>
+    </div>    
+  </div>
+  
+
+  <br>
+  <div class="summaryContainer">
+    <div class="item">
+        <div style="margin-left: 50px;" class="number" th:text = "${cartCount}"></div>
+        <div style="margin-left: 50px;">
+    <a href="/ok/cart/cartform">장바구니 목록</a>
+</div>
+      </div>
+        <!-- <div class="item">
+        <div class="number" th:text = "${LikesCount}"></div>
+        <div>찜 목록</div>
+      </div> -->
+     <div class="item">
+        <div class="number" th:text = "${BoardCount}"></div>
+        <div>게시글 목록</div>
+      </div> 
+  </div>  
+  <br>
+  
+  <div class="shippingStatusContainer">
+    <div class="title">
+      주문/배송조회
+    </div>
+    <div class="status">
+      
+      <div class="item">
+        <div>
+       	 <div class="green number" th:text = "${beforeDeposit}"></div>
+          <div class="text">입금 전</div>
+        </div>
+        <div class="icon"> > </div>
+      </div>     
+      <div class="item">
+        <div>
+          <div class="green number" th:text = "${PreparingProduct}"></div>
+          <div class="text">배송 준비 중</div>
+        </div>
+        <div class="icon"> > </div>
+      </div>     
+      <div class="item">
+        <div>
+           <div class="green number" th:text = "${shipping}"></div>
+          <div class="text">배송 중</div>
+        </div>
+        <div class="icon"> > </div>
+      </div>     
+      <div class="item">
+        <div>
+          <div class="green number" th:text = "${completed}"></div>
+          <div class="text">배송 완료</div>
+        </div>
+      </div>     
+      
+    </div>
+    
+  </div>  
+  
+<script>
+
+const searchBtn = document.getElementById('search-btn');
+const searchContainer = document.getElementById('search-container');
+
+// 검색창과 검색 버튼을 미리 생성하고 삽입합니다.
+const searchInput = document.createElement('input');
+searchInput.type = 'text';
+searchInput.placeholder = '검색어를 입력하세요';
+
+const submitButton = document.createElement('button');
+submitButton.innerText = '검색';
+submitButton.className = 'submit-button';
+
+searchContainer.appendChild(searchInput);
+searchContainer.appendChild(submitButton);
+
+// 검색 버튼에 이벤트 리스너를 추가합니다.
+submitButton.addEventListener('click', () => {
+  const searchValue = searchInput.value;
+  window.location.href = `product/search?keyword=${searchValue}`;
+});
+
+// 닫기 버튼에 이벤트 리스너를 추가합니다.
+const closeButton = document.createElement('span');
+closeButton.innerHTML = '&times;';
+closeButton.className = 'close-button';
+closeButton.addEventListener('click', () => {
+  searchContainer.removeChild(searchInput);
+  searchContainer.removeChild(submitButton);
+  searchContainer.removeChild(closeButton);
+  searchContainer.classList.add('hidden');
+});
+searchContainer.appendChild(closeButton);
+
+// 검색 버튼을 클릭할 때마다 검색창이 생기지 않도록 수정합니다.
+searchBtn.addEventListener('click', () => {
+  if (searchContainer.classList.contains('hidden')) {
+    searchContainer.classList.remove('hidden');
+  } else {
+    searchContainer.classList.add('hidden');
+  }
+});
+
+// 검색 버튼을 누르면 실행되는 함수
+submitButton.addEventListener('click', () => {
+	  const searchValue = searchInput.value;
+	  const xhr = new XMLHttpRequest();
+	  xhr.open('GET', `product/search?keyword=${searchValue}`);
+	  xhr.onload = function() {
+	    if (xhr.status === 200) {
+	      // 서버로부터 받은 응답을 처리합니다.
+	    } else {
+	      // 에러 처리를 합니다.
+	    }
+	  };
+	  xhr.send();
+	});
+</script>
+
+  
+</body>
+</th:block>
+</html>

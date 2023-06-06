@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link th:href="@{/assets/css/admin-user-update.css}" rel="stylesheet"
+	type="text/css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+
+<style type="text/css"></style>
+</head>
+<body>
+	<div class="area"></div>
+	<nav class="main-menu">
+
+		<ul>
+			<li><br> <a href="https://jbfarrow.com"> <i
+					class="fa fa-home fa-2x"></i> <span class="nav-text"> 홈으로 이동
+				</span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/usermanageform}">
+					<i class="fa fa-comments fa-2x"></i> <span class="nav-text">
+						회원 관리 </span>
+			</a></li>
+			<li class="has-subnav"><a th:href="@{/admin/productmanageform}">
+					<i class="fa fa-camera-retro fa-2x"></i> <span class="nav-text">
+						상품 관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/ordermanageform}"> <i
+					class="fa fa-book fa-2x"></i> <span class="nav-text"> 주문관리 </span>
+			</a></li>
+
+			<li><a th:href="@{/admin/moveMain}"> <i
+					class="fa fa-map-marker fa-2x"></i> <span class="nav-text">
+						쇼핑몰 메인으로 이동 </span>
+			</a></li>
+
+
+			<ul class="logout">
+				<li><a th:href="@{/admin/logout}"> <i
+						class="fa fa-power-off fa-2x"></i> <span class="nav-text">
+							Logout </span>
+				</a></li>
+			</ul>
+		</ul>
+	</nav>
+
+
+	<!-- Contents -->
+<br>
+	<br>
+
+	<div align="center">
+		<h1 style="font-size: 3em;">상품관리</h1>
+		<br> <br>
+	</div>
+
+	<!--회원 정보 수정 -->
+	<form action="/ok/admin/productupdate" method="POST">
+		<div class="d-div" style="padding: 20px;">
+			<div class="sign">
+
+				<h3>상품 정보 수정</h3>
+				<hr class="hr1">
+				<div class="sign-text">
+					<h5 style="line-height: 3em;">
+						상품코드
+						<!-- <span style="color:red;">*</span> -->
+						</h3>
+				</div>
+				<div class="sign-input">
+
+					<div style="font-size: 20px; font-weight: bold;">[[${product.productCode}]]</div>
+					(상품코드는 변경 불가합니다.)
+				</div>
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">이름</h5>
+				</div>
+				<div class="sign-input">
+					<input type="text" name="productName" th:value="${product.productName}"
+						class="ia">
+				</div>
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">가격</h5>
+					<br>
+				</div>
+				<div class="sign-input">
+					<input type="text" name="productPrice" th:value="${product.productPrice}"
+						class="ia">
+				</div>
+
+				<hr class="hr2">
+				
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">재고</h5>
+
+				</div>
+
+				<div class="sign-input">
+					<input type="text" name="productStock" th:value="${product.productStock}"
+						class="ia">
+				</div>
+
+
+				<hr class="hr2">
+				
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">판매량</h5>
+
+				</div>
+
+				<div class="sign-input">
+					<input type="text" name="productSale" th:value="${product.productSale}"
+						class="ia">
+				</div>
+
+				<hr class="hr2">
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">상품 상세 설명</h5>
+				</div>
+				<div class="sign-input">
+					<input type="text" name="productDetail" th:value="${product.productDetail}"
+						class="ia">
+				</div>
+				
+				<hr class="hr2">
+
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">상품 포스팅 여부</h5>
+				</div>
+				<br>
+				<div class="sign-input">
+					<label> <input type="radio" name="productPostingYn" value="y"
+						th:checked="${product.productPostingYn == 'y'}"> Y
+					</label> <label> <input type="radio" name="productPostingYn"
+						value="n" th:checked="${product.productPostingYn == 'n'}"> N
+					</label>
+				</div>
+
+				<hr class="hr2">
+
+				<div class="sign-text">
+					<h5 style="line-height: 2.5em;">상품 판매 여부</h5>
+				</div>
+				<br>
+				<div class="sign-input">
+					<label> <input type="radio" name="productSaleingYn"
+						value="y" th:checked="${product.productSaleingYn == 'y'}"> Y
+					</label> <label> <input type="radio" name="productSaleingYn"
+						value="n" th:checked="${product.productSaleingYn == 'n'}"> N
+					</label>
+				</div>
+				<hr class="hr2">
+
+			</div>
+			<input type="hidden" name="productCode" required th:value="${product.productCode}">
+			<input type="hidden" name="productThumbnail" required th:value="${product.productThumbnail}">
+			<input type="hidden" name="productImage1" required th:value="${product.productImage1}"> 
+			<input type="hidden" name="productImage2" required th:value="${product.productImage2}">
+			<input type="hidden" name="productSize" required th:value="${product.productSize}">
+			<input type="hidden" name="categoryNo" required th:value="${product.categoryNo.categoryNo}">
+			<div align="center">
+				<button id="my-button">회원정보 수정</button>
+			</div>
+		</div>
+
+	</form>
+
+
+</body>
+</html>

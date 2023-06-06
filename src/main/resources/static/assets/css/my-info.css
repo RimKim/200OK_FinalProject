@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap&subset=korean');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+body {    
+font-family: 'Nanum Gothic', sans-serif;
+font-size: 0.8rem; 
+line-height: 1.5rem;   
+color: #000;
+
+} 
+h1 {  
+font-size: 2.5rem;   
+line-height: 1.0rem;  
+letter-spacing:-0.05em;
+color: #666;
+font-family: 'Lato', sans-serif;     
+text-transform: uppercase;
+  display: inline;}
+h2 {
+  font-family: 'Lato', sans-serif;
+font-size: 2.5rem;   
+line-height: 1.0rem;  
+color: #666;
+}
+h3 {
+  font-family: 'Lato', sans-serif;
+font-size: 1.5rem;   
+line-height: 1.0rem;  
+color: #666;   
+text-transform: uppercase;
+}
+h4 {  
+font-size: 1.2rem;   
+line-height: 1.2rem;  
+color: #666;
+margin-top:10px;
+}
+h5 {  
+font-size: 1rem;   
+line-height: 1.3rem;  
+color: #666;
+  margin:10px;
+}
+small{ 
+font-size: 0.7rem;   
+line-height: 1.0rem;  
+color: #aaa;
+}
+
+a{color:#666; text-decoration:none;} 
+a:visited {color:#666;}
+
+.f-list li a{color:#999; text-decoration:none;} 
+.f-list li a:visited {color:#999;}
+.f-list li a:hover{color:#000;}
+
+.lin a{color:#666; text-decoration:none;} 
+.lin a:visited {color:#666;}
+.lin a:hover{color:#000;}
+
+.d-button a{color:#ffff; text-decoration:none;} 
+.d-button a:visited {color:#fff;}
+.d-button a:hover{color:#000;}
+
+.container a{color:#000; text-decoration:none;}
+.container a:visited {color:#000;}
+
+/*default*/
+
+body {
+background-color: #fff;
+margin: 0; 
+padding: 0;
+}
+
+ul li {
+list-style: none;/*텍스트가로정렬*/
+display: inline;
+}
+
+img {
+vertical-align: middle;
+}
+
+.d-box{
+  margin: 0; 
+padding: 0;
+  width:100%;
+  clear: both;
+  position: relative;
+  background-color: none;
+}
+
+.d-box:after{
+  content: '';
+  display: block;
+  clear: both;
+  visibility: hidden;}
+  
+.dd-box{
+    padding: 0;
+  width:1200px;
+  clear: both;
+  position: relative;
+  margin: 0 auto;
+  background-color: none;
+}
+
+.dd-box:after{
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;}
+
+.d-button {
+padding: 10px 40px;
+margin: 10px 0px;
+display: inline-block;
+   background-color:#43BEBF;
+}
+.dd-button {
+padding: 5px 30px;
+margin: 10px 0px;
+display: inline-block;
+  border:1px solid #aaa;
+  float:right;
+}
+.f-button {
+padding: 7px 20px;
+display: inline-block;
+  border:1px solid #888;
+  margin-top:10px;
+}
+
+.fx{
+			position:fixed;
+		  bottom:330px;
+			right:20px;
+			width:50px;
+			height:150px;
+			background-color:none;
+      clear:both;
+       z-index:1;
+		}
+hr
+{border: solid 2px #666;}
+/*선종류 선굵기 선색상*/
+
+/*title*/
+.titl{
+  width:95%;
+  min-width:1000px;
+  display:inline-block;
+  background-color:#fff;
+  margin:20px 2.5%;
+}
+.f-list li{
+  font-size:1rem;
+  float:left;
+  padding:5px 15px;
+}
+.s-list li{
+  font-size:0.7rem;
+  float:right;
+  padding:5px 10px;
+}
+.story{
+  position: absolute;
+  left:100px;
+  bottom:50px;
+}
+.story-l{
+  margin-left:50px;
+}
+.lin{
+  display: inline-block;
+  float:left;
+  padding:5px;
+}
+
+.f-list{
+  font-family: 'Lato', sans-serif;
+}
+
+/*메뉴바*/
+.list-f{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:125px;
+width:100px;
+}
+.list-s{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:220px;
+width:120px;
+}
+.list-t{
+background: #fff;
+display:none;  /* 평상시에는 서브메뉴가 안보이게 하기 */
+height:auto;
+padding:20px;
+margin:0px;
+position:absolute;
+  left:405px;
+width:100px;
+}
+.f-list li:hover ul {
+display:block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}
+
+
+
+/*section1*/
+
+.best{
+  font-family: 'Dancing Script', cursive;
+  font-size:1.5rem;
+  color:#43BEBF;
+}
+
+.fs-f{
+  width:630px;
+  margin-bottom:70px;
+  float:left;
+}
+.fs-s{
+  width:530px;
+  float:right;
+  margin-top:10px;
+}
+.fs-t{
+  width:1000px;
+  float:right;
+}
+
+/*section2*/
+.rev{
+  display:inline-block;
+  width:900px;
+}
+.text{
+  margin-top:100px;
+  width:400px;
+  float:left;
+}
+.mat{
+  width:200px;
+  margin:10px;
+  float:left;
+}
+.revw{
+  float:right;
+  margin-top:180px;
+  width:270px;
+}
+/*section3*/
+.tri{
+  width:550px;
+  float:left;
+  margin:25px;
+}
+.tex{
+  width:170px;
+  position:absolute;
+  top:40px;
+}
+.im{
+  margin-left:100px;
+}
+/*footer1*/
+.container{
+display:flex;
+}
+.container hr {border: solid 0.5px #bbb;}
+
+.container div{
+  margin:20px;
+}
+.con1{
+  width:250px;
+}
+.con2{
+  width:250px;
+}
+.con3{
+  width:110px;
+}
+.con4{
+  width:500px;
+}
+/*footer2*/
+.foo{
+  display:inline;
+}
+.foo-i{
+float:left;
+ padding:15px 10px;
+}
+.foo-ic{
+  float:right;
+  padding:15px 10px;
+}
+/*----------------------------------*/
+body{
+  padding: 0;
+  margin: 0;
+}
+div{
+  box-sizing: border-box;
+}
+
+/* alert badge */
+.circle{
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 2.5px;
+  background-color: #ff0000;
+  position: absolute;
+  top: -5px;
+  left: 110%;
+}
+
+/* 녹색 텍스트 */
+.green{
+  color: #848484;
+}
+
+.wrap{
+  background-color: #F8F8F8;  
+}
+/* 녹색배경 */
+.greenContainer{  
+  height: 132px;
+  background-color: #D8D8D8;    
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.greenContainer .name{
+   font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+} 
+.greenContainer .modify{
+  margin-left: auto;
+}
+
+/* 단골상점 , 상품후기 , 적립금 박스 */
+.summaryContainer{
+  background-color: white;  
+  display: flex;  
+  padding: 21px 16px;  
+  height: 90px;
+  margin-bottom: 10px;
+}
+/* 단골상점 , 상품후기 , 적립금 */
+.summaryContainer .item{
+  flex-grow: 1
+}
+/* 녹색 숫자 */
+.summaryContainer .number{
+  font-size: 19px;
+  font-weight: bold;
+  color: #848484;
+}
+/* 텍스트 */
+.summaryContainer .item > div:nth-child(2){
+  font-size: 16px;
+}
+
+/* ================== 주문/배송조회 박스 시작 ==================== */
+.shippingStatusContainer{
+  padding: 21px 16px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+/* 주문/배송조회 타이틀 */
+.shippingStatusContainer .title{
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 장바구니 결제완료 배송중 구매확정 [로우] */
+.shippingStatusContainer .status{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 21px;
+}
+/* 장바구니 결제완료 배송중 구매확정 [아이템]  */
+.shippingStatusContainer .item{
+  display: flex;
+}
+
+.shippingStatusContainer .number{
+  font-size: 31px;
+  font-weight: 500;
+  text-align: center;
+}
+.shippingStatusContainer .text{
+  font-size: 15px;
+  font-weight: normal;
+  color: #1C1C1C;
+  text-align: center;
+}
+.shippingStatusContainer .icon{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 16px;
+  height: 16px;
+}
+
+
+/*=================== 주문목록 ~ 찜한상품 리스트 ==================*/
+.listContainer{  
+  padding: 0;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+.listContainer .item{  
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  color: black;
+  text-decoration: none;  
+  height: 56px;
+  box-sizing: border-box;
+}
+.listContainer .icon{  
+  margin-right: 14px;
+}
+.listContainer .text{
+  font-size: 16px;
+  position: relative;
+}
+.listContainer .right{
+  margin-left: auto;
+}
+
+
+/*=================== 내지갑의 보유 적립금 들어가는 부분 ================*/
+.listContainer .smallLight{
+  font-size: 14px;
+  color: #c2c2c2;  
+}
+.listContainer .smallLight > span{
+  margin-left: 10px;
+}
+
+.listContainer .right .blct{
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+
+
+/* 공지사항 이용안내 고객센터 */
+.infoContainer{
+  background-color: white; 
+  display: flex;
+  height: 100px;
+  margin-bottom: 10px;    
+}
+
+.infoContainer .item{
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 13px;
+  text-decoration: none;
+  color: black;
+}
+.infoContainer .item > div:first-child{
+  margin-bottom: 2px;
+}
+
+html, body {
+    height: 100%
+}
+
+#wrap {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+footer {
+    bottom: 0;
+}

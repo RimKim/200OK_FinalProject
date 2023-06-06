@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorate="~{layout/layout}">
+				
+<th:block layout:fragment="content">
+<head>
+<link rel="stylesheet" href="../assets/css/main.css" />
+<style type="text/css"></style>
+<script type="text/javascript" rc="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="/ok/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
+</head>
+<body>
+
+
+			
+			 <form action="savereply" method="post" 
+			style="display: flex; flex-direction: column; align-items: center;">
+		
+			<!-- 회원의 정보 받아서 컨트롤러에 전달 -->
+			<input type="hidden" name="userId" required th:value="${user.userId}"> 
+			
+			<!--  제목 -->
+			<div style="width: 80%; margin-bottom: 20px;">
+				<input name="qnaTitle" placeholder="제목을 입력해주세요"
+					style="width: 99.5%; border: 1px solid #ccc; height: 40px;"></input>
+			</div> 
+			<!--  내용 -->
+			<div id="smarteditor" style="width: 80%; margin-bottom: 20px;">
+				<textarea name="qnaContent" id="editorTxt" rows="20" cols="10"
+					placeholder="내용을 입력해주세요" style="width: 80%"></textarea>
+			</div>
+		
+			
+			<button onclick ="savePost();">전송</button>
+
+		 </form>
+
+	<script>
+    let oEditors = []
+
+    smartEditor = function() {
+      console.log("Naver SmartEditor")
+      nhn.husky.EZCreator.createInIFrame({
+        oAppRef: oEditors,
+        elPlaceHolder: "editorTxt",
+        sSkinURI: "/ok/smarteditor/SmartEditor2Skin.html",
+        fCreator: "createSEditor2"
+      })
+    }
+
+    $(document).ready(function() {
+      smartEditor()
+    })
+
+    
+      savePost = function() {
+    	  oEditors.getById["editorTxt"].exec("UPDATE_CONTENTS_FIELD", []);
+    	  let content = document.getElementById("editorTxt").value;
+    	  let title = document.getElementsByName("qnaTitle")[0].value;
+    	  let userId = document.getElementsByName("userId")[0].value;
+
+    	  if(content == '') {
+    	    alert("내용을 입력해주세요.");
+    	    oEditors.getById["editorTxt"].exec("FOCUS");
+    	    return;
+    	  } else {
+    	    let post = {
+    	      qnaContent: content,
+    	      qnaTitle: title,
+    	      userId: userId,
+    	    };
+
+    	    $.ajax({
+    	      url: "savereply1",
+    	      //url: "savepost",
+    	      data: post,
+    	      success: function(data) {
+    	        console.log('success');
+    	        alert('저장하였습니다.');
+    	      },
+    	      error: function(jqXHR, textStatus, errorThrown) {
+    	        console.log(jqXHR);
+    	        alert('오류가 발생하였습니다.');
+    	      },
+    	    });
+    	  }
+    	}
+      
+
+</script>
+
+</body>
+</th:block>
+</html>
