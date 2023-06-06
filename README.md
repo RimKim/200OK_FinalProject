@@ -65,7 +65,7 @@ Spring Boot + MySql + JPA 기반으로 개발된 웹 프로젝트입니다.<br>
 
 ### 1️⃣ 데이터베이스 설계
 <br><br><br>
-
+<img width="60%" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/d8b5f8c7-097c-45fc-81a1-a30a0887f3af"/>
 <div align="center">
 
 </div>
