@@ -82,44 +82,44 @@ https://ovenapp.io/project/qd88VIWjsaejDrMlMGqosTVo0LvrruLM#4IE1u
 ▪️  우편번호와 도로명주소는 도로명API를 통해서만 입력됩니다.<br>
 ▪️  이메일 입력 후 인증버튼 클릭시 인증번호가 메일로 전송됩니다.<br> 
 ▪️  메일에 전송된 인증번호를 인증번호확인란에 입력 하게 됩니다.<br><br>
-<img width="70%" height = "300px" src=""/>
+<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/3b78412d-d7ad-4cf7-a850-b7894caf185c"/>
 
 ###  ✔️ 로그인
 ▪️  보안을 강화하기 위해 인터셉터(interceptor) 기능을 활용하여 로그인 프로세스를 처리하고 있습니다.<br>
 ▪️  일반로그인, sns 로그인 두가지 방식으로 로그인이 가능합니다.<br>
 ▪️  sns로 최초 로그인하는 경우 kakao가 제공하는 사용자 정보 외에 필요한 정보를 회원가입폼을 이용하여 입력 받게 됩니다.<br>
 ▪️  이후 sns로 로그인 시 별도의 절차 없이 로그인 되어 메인으로 이동 합니다.<br><br>
-<img width="40%" height = "300px" src=""/>
+<img width="40%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/6c44c5d5-4234-4977-9ec8-be640067a52a"/>
 
 ###  ✔️ 이메일 인증
 ▪️  비밀번호찾기: 아이디, 이름, 이메일 입력 후 버튼 클릭시 이메일로 임시 비밀번호가 전송됩니다.<br> 
 ▪️  메일 전송시 회원의 기존 비밀번호는 해당 임시 비밀번호로 갱신됩니다.<br>
 ▪️  아이디와 임시 비밀번호로 로그인이 가능합니다.<br><br>
-<img width="70%" height = "300px" src=""/>
+<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/e97f42d8-1c7b-417f-aef2-b0855066a47a"/>
 
 ###  ✔️ 장바구니
 ▪️  상품 상세보기에서 장바구니 담기 가능합니다.<br>
 ▪️  체크박스에 체크 된 상품만 가격 합계 계산 및 주문서로 넘어 가게됩니다.<br>
 ▪️  상품 결제 시 장바구니에서 해당 상품은 사라지게 됩니다.<br><br>
-<img width="70%" height = "300px" src=""/>
+<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/a482ff4b-73a1-470f-b397-b7058bdb7484"/>
 
 ###  ✔️ 배송지관리
 ▪️  하나의 배송지만 기본 배송지로 설정 가능합니다.<br>
 ▪️  기본 배송지가 존재하는 경우 주문서에서 기본배송지로 자동으로 입력되고 체크박스 클릭시 빈칸으로 초기화됩니다.<br><br>
-<img width="70%" height = "300px" src=""/>
+<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/97308b5d-58d4-41ba-b0c9-de689d0b3de2"/>
 
 ###  ✔️ 결제
 ▪️  통합결제시 결제API를 통해 실결제가 가능합니다.<br>
 ▪️  결제창에 주문자의 이름과 이메일이 출력됩니다.<br>
 ▪️  결제가 완료되면 결제금액 알람창이 나온 후 주문완료 페이지가 나타납니다.<br><br>
-<img width="70%" height = "300px" src=""/>
+<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/c5b61e8a-5391-4066-8f4e-6880b10c6560"/>
 
 
 ###  ✔️ 관리자
 ▪️  관리자로 로그인 한 경우 마이페이지에서 관리자 홈으로 이동 가능합니다.( 일반 유저의 경우 버튼이 보이지 않습니다. )<br>
 ▪️  판매량 BEST5,WORST5 상품을 구글 chart api를 통해 출력합니다. <br>
 ▪️  회원,상품,주문에 대한 관리가 가능합니다.  <br><br>
-<img width="70%" height = "300px" src=""/> 
+<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/60098330-c8b1-4b50-bb0f-50a60ea06db4"/> 
 
 ## 💥트러블 슈팅
 ###  ✔️ 쿼리 참조 타입 오류 발생
