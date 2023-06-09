@@ -67,7 +67,7 @@ Spring Boot + MySql + JPA 기반으로 개발된 웹 프로젝트입니다.<br>
 <br><br><br>
 
 <div align="center">
-<img width="60%" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/d8b5f8c7-097c-45fc-81a1-a30a0887f3af"/>
+<img width="60%" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/8e0ec0d8-412e-45b8-a3cc-e811c5055d24"/>
 </div>
 
 ### 2️⃣ 목업 설계
@@ -82,44 +82,44 @@ https://ovenapp.io/project/qd88VIWjsaejDrMlMGqosTVo0LvrruLM#4IE1u
 ▪️  우편번호와 도로명주소는 도로명API를 통해서만 입력됩니다.<br>
 ▪️  이메일 입력 후 인증버튼 클릭시 인증번호가 메일로 전송됩니다.<br> 
 ▪️  메일에 전송된 인증번호를 인증번호확인란에 입력 하게 됩니다.<br><br>
-<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/8ec4f8bd-e729-497a-849e-79e95cd95b87"/>
+<img width="70%" height = "300px" src=""/>
 
 ###  ✔️ 로그인
 ▪️  보안을 강화하기 위해 인터셉터(interceptor) 기능을 활용하여 로그인 프로세스를 처리하고 있습니다.<br>
 ▪️  일반로그인, sns 로그인 두가지 방식으로 로그인이 가능합니다.<br>
 ▪️  sns로 최초 로그인하는 경우 kakao가 제공하는 사용자 정보 외에 필요한 정보를 회원가입폼을 이용하여 입력 받게 됩니다.<br>
 ▪️  이후 sns로 로그인 시 별도의 절차 없이 로그인 되어 메인으로 이동 합니다.<br><br>
-<img width="40%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/c5b22a93-fcbc-4a3a-9aef-3fc875920ce1"/>
+<img width="40%" height = "300px" src=""/>
 
 ###  ✔️ 이메일 인증
 ▪️  비밀번호찾기: 아이디, 이름, 이메일 입력 후 버튼 클릭시 이메일로 임시 비밀번호가 전송됩니다.<br> 
 ▪️  메일 전송시 회원의 기존 비밀번호는 해당 임시 비밀번호로 갱신됩니다.<br>
 ▪️  아이디와 임시 비밀번호로 로그인이 가능합니다.<br><br>
-<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/2174b89a-1cba-43c7-ad1e-32b2c8028413"/>
+<img width="70%" height = "300px" src=""/>
 
 ###  ✔️ 장바구니
 ▪️  상품 상세보기에서 장바구니 담기 가능합니다.<br>
 ▪️  체크박스에 체크 된 상품만 가격 합계 계산 및 주문서로 넘어 가게됩니다.<br>
 ▪️  상품 결제 시 장바구니에서 해당 상품은 사라지게 됩니다.<br><br>
-<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/90d0d604-bb4d-456f-a1bb-941215e601af"/>
+<img width="70%" height = "300px" src=""/>
 
 ###  ✔️ 배송지관리
 ▪️  하나의 배송지만 기본 배송지로 설정 가능합니다.<br>
 ▪️  기본 배송지가 존재하는 경우 주문서에서 기본배송지로 자동으로 입력되고 체크박스 클릭시 빈칸으로 초기화됩니다.<br><br>
-<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/558ba8e2-2e2c-4aca-aaa5-8b2f2b3f3ff6"/>
+<img width="70%" height = "300px" src=""/>
 
 ###  ✔️ 결제
 ▪️  통합결제시 결제API를 통해 실결제가 가능합니다.<br>
 ▪️  결제창에 주문자의 이름과 이메일이 출력됩니다.<br>
 ▪️  결제가 완료되면 결제금액 알람창이 나온 후 주문완료 페이지가 나타납니다.<br><br>
-<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/7cbc1bfc-ca37-4607-93e8-3b2e00a1a170"/>
+<img width="70%" height = "300px" src=""/>
 
 
 ###  ✔️ 관리자
 ▪️  관리자로 로그인 한 경우 마이페이지에서 관리자 홈으로 이동 가능합니다.( 일반 유저의 경우 버튼이 보이지 않습니다. )<br>
 ▪️  판매량 BEST5,WORST5 상품을 구글 chart api를 통해 출력합니다. <br>
 ▪️  회원,상품,주문에 대한 관리가 가능합니다.  <br><br>
-<img width="70%" height = "300px" src="https://github.com/RimKim/200OK_FinalProject/assets/122211031/3e0607f9-325b-4c1a-bf67-eb71839ac1c0"/> 
+<img width="70%" height = "300px" src=""/> 
 
 ## 💥트러블 슈팅
 ###  ✔️ 쿼리 참조 타입 오류 발생
